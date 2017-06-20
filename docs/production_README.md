@@ -28,7 +28,19 @@ The Discovery Feed is the most recent pins created by the user's followers.
 
 - Implementation Timeline
 
-W1:  - Tues, solidify working skeleton and plan!
+W1:  - Tues/Wed Do all auth backend and front end portions.  
+        (goal: do the backend Tuesday)
+
+        - migrations (CreateUsers)
+        - models (user)
+        - seeds
+        - controllers (user, application controller)
+        - check necessary gems
+        - make routes 
+        - views
+
+      -
+
      - Wed/Thurs/Fri create auth sign up/login/logout, header/logo
      - Sat/Sun, create user show page, boarditems, with seeds
 W2:  - Mon/Tues, complete user show page, boardpages, pin detail page
