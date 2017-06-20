@@ -36,9 +36,11 @@ W1:  - Tues/Wed Do all auth backend and front end portions.
         - seeds
         - controllers (user, application controller)
         - check necessary gems
-        - make routes 
+        - make routes
         - views
 
+        (do associations later!)
+        (api/users/show) is the discovery page
       -
 
      - Wed/Thurs/Fri create auth sign up/login/logout, header/logo
