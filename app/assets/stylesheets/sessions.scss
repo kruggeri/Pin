@@ -43,12 +43,14 @@ body {
   padding-top: 50px;
   margin: 0;
   font-size: 32px;
+  letter-spacing: -1.2px;
 }
 
 .greet {
   text-align: center;
   font-size: 24px;
   padding-bottom: 20px;
+  letter-spacing: -1.2px;
 }
 
 .errors {
@@ -115,7 +117,7 @@ body {
 .altprompt-text {
   display: flex;
   justify-content: center;
-  padding-top: 20px; 
+  padding-top: 20px;
 }
 
 .alt-prompt {
