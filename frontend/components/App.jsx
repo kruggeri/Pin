@@ -14,12 +14,12 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
+    <Route exact path="/">
+      <Redirect to="/login" />
+    </Route>
     <AuthRoute exact path="/login" component={SessionFormContainer} />
     <AuthRoute exact path="/signup" component={SessionFormContainer} />
   </div>
 );
 
 export default App;
-
-
-// <Route exact path="/" component={HomeContainer} />
