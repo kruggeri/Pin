@@ -1,4 +1,4 @@
-html, body, button, h2, input, ul {
+html, body, button, h2, input, ul, input {
   margin: 0;
   border: 0;
   padding: 0;
@@ -11,7 +11,7 @@ html, body, button, h2, input, ul {
 
 
 body {
-  font-family: sans-serif;
+  font-family: 'Helvetica Neue';
   background: white;
   color: black;
   font-size: 20px;
@@ -44,6 +44,7 @@ body {
   margin: 0;
   font-size: 32px;
   letter-spacing: -1.2px;
+  -webkit-font-smoothing: antialiased;
 }
 
 .greet {
@@ -102,6 +103,7 @@ body {
 
 .login-username:focus, .login-password:focus{
   background-color: #f0f0f0;
+  outline: none; 
 }
 
 .submit-button {
