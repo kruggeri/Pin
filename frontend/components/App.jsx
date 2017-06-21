@@ -7,18 +7,19 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
+
+
 import DiscoveryContainer from './discovery/discovery_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <Route exact path="/login" component={SessionFormContainer} />
-    <Route path="/signup" component={SessionFormContainer} />
+    <AuthRoute exact path="/login" component={SessionFormContainer} />
+    <AuthRoute exact path="/signup" component={SessionFormContainer} />
   </div>
 );
 
 export default App;
 
-// <header>
-//   <h1>Pin App</h1>
-//   // <DiscoveryContainer />
-// </header>
+
+// <Route exact path="/" component={HomeContainer} />
