@@ -1,5 +1,8 @@
 <script type="text/javascript">
 
+window.images = {
+  pin_icon_small: "<%=image_path('pin_icon_small.jpg')%>"
+}
 
   <% if logged_in? %>
     window.currentUser = <%= render(
@@ -10,4 +13,4 @@
 </script>
 
 
-<main id="root"></main>
+<main id="root"> </main>

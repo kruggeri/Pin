@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
+
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -89,7 +90,7 @@ class SessionForm extends React.Component {
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <div className="icon">
               <div className="icon-pic">
-                <img src="./assets/pin_icon_small.jpg" />
+                <img src={window.images.pin_icon_small} />
               </div>
 
             </div>
