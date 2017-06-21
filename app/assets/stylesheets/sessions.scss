@@ -1,3 +1,128 @@
-// Place all the styles related to the sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html, body, button, h2, input {
+  margin: 0;
+  border: 0;
+  padding: 0;
+
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+
+body {
+  font-family: sans-serif;
+  background: white;
+  color: black;
+  font-size: 20px;
+  height: 100%;
+  font-weight: lighter;
+  background: url(./home_page_darken.jpg);
+  background-size: cover;
+}
+
+.login-body {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  color: #555;
+}
+
+.login-form-container {
+  background: white;
+  display: flex;
+  width: 400px;
+  height: 535px;
+  border-radius: 10px;
+  justify-content: center;
+  margin-top: 135px;
+}
+
+ h3 {
+  text-align: center;
+  padding-top: 50px;
+  margin: 0;
+  font-size: 32px;
+}
+
+.greet {
+  text-align: center;
+  font-size: 24px;
+  padding-bottom: 20px;
+}
+
+.errors {
+  text-align: center;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+}
+
+.icon-pic {
+  margin-top: 50px;
+
+}
+
+.icon-pic img {
+  width: 50px;
+  height: 50px;
+}
+
+.form-username, .form-password {
+  justify-content: center;
+  display: flex;
+  padding: 10px;
+}
+
+.login-username, .login-password {
+  background-color: #FCFFB8;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  width: 235px;
+  height: 35px;
+  padding-left: 10px;
+}
+
+
+.login-username:focus, .login-password:focus{
+  background-color: #f0f0f0;
+}
+
+.submit-button {
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 15px;
+  padding: 15px 32px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: 20px;
+  border-radius: 3px;
+  width: 235px;
+}
+
+.submit-button:hover {
+  cursor: pointer;
+}
+
+.altprompt-text {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px; 
+}
+
+.alt-prompt {
+  color: rgb(85, 85, 85);
+  font-weight: normal;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  justify-content: center;
+}
