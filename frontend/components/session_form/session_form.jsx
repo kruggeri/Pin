@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -18,16 +19,38 @@ class SessionForm extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
 
+  handleDemo(e) {
+    e.preventDefault();
+    this.setState(
+      { username: 'Kate', password: '123456' });
+    () => handleSubmit(e);
+  }
+
+  demoButton() {
+    return (
+      <input type="button" onClick={this.handleDemo} value="Demo" />
+    );
+  }
+
+
+
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user});
+    this.props.processForm({user})
+      .then( (userAction) => {
+        this.props.history.push(`/users/${userAction.currentUser.id}`)
+      });
   }
 
   greet() {
@@ -126,6 +149,7 @@ class SessionForm extends React.Component {
             <div className="alt-prompt">
               {this.altPrompt()}
             </div>
+            {this.demoButton()}
           </form>
 
 

@@ -17,16 +17,70 @@ body {
   font-size: 20px;
   height: 100%;
   font-weight: lighter;
-  background: image-url('home_page_darken.jpg');
-  background-size: cover;
+  background-color: white;
 }
 
+
+
+
 .login-body {
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  background: image-url('inprog_bg_smaller.jpg');
+  background-position: contain;
+  -webkit-animation:200s scroll infinite linear;
+  -moz-animation:200s scroll infinite linear;
+  -o-animation:200s scroll infinite linear;
+  -ms-animation:200s scroll infinite linear;
+  animation:200s scroll infinite linear;
+  width:100%;
+  height:100%;
+  padding: 0;
+  position: fixed;
   display: flex;
   justify-content: center;
   font-weight: bold;
   color: #555;
 }
+
+@-webkit-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+    transform: translateY(-300px);
+
+  }
+}
+
+@-moz-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+@-o-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+@-ms-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+
+
+@keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+
+
 
 .login-form-container {
   background: white;
@@ -103,7 +157,7 @@ body {
 
 .login-username:focus, .login-password:focus{
   background-color: #f0f0f0;
-  outline: none; 
+  outline: none;
 }
 
 .submit-button {

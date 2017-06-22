@@ -11,15 +11,18 @@ import {
 
 import DiscoveryContainer from './discovery/discovery_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import  HeaderContainer  from './header/header_container';
 
 const App = () => (
   <div>
-    <Route exact path="/">
-      <Redirect to="/login" />
-    </Route>
+    <ProtectedRoute exact path="/" component={HeaderContainer} />
+      <Route exact path="/">
+        <Redirect to="/login" />
+      </Route>
     <AuthRoute exact path="/login" component={SessionFormContainer} />
     <AuthRoute exact path="/signup" component={SessionFormContainer} />
-  </div>
+
+</div>
 );
 
 export default App;
