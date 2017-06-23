@@ -26,7 +26,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 
 
-
+gem 'font-awesome-sass', '~> 4.7.0'
 gem 'annotate'
 gem 'rails_12factor'
 # Use Unicorn as the app server

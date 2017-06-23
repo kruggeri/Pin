@@ -1,4 +1,4 @@
-html, body, button, h2, input, ul, input {
+html, body, button, h2, input, ul, input, link {
   margin: 0;
   border: 0;
   padding: 0;
@@ -193,4 +193,56 @@ body {
   -webkit-font-smoothing: antialiased;
   display: flex;
   justify-content: center;
+}
+
+.header {
+  justify-content: space-between;
+  display: flex;
+
+}
+
+.header-icon {
+  padding: 4px;
+}
+
+.header-icon img {
+  width: 30px;
+  margin-left: 30px;
+  margin-top: 22px;
+}
+
+.center-nav {
+  margin-left: 30px;
+  background-color: #efefef;
+  border-radius: 4px;
+  height: 40px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.right-nav {
+  display: flex;
+  padding-right: 30px;
+  padding-left: 30px;
+  width: 200px;
+}
+
+.logout-container {
+  display: flex;
+  padding-right: 30px;
+}
+
+.logout-button {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.profile-link {
+  margin-top: 15px;
+}
+
+.profile-link-icon {
+  font-size: 27px;
+  color: black;
 }

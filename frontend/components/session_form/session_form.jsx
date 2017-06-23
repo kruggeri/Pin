@@ -32,8 +32,11 @@ class SessionForm extends React.Component {
   handleDemo(e) {
     e.preventDefault();
     this.setState(
-      { username: 'Kate', password: '123456' });
-    () => handleSubmit(e);
+      { username: 'Kate', password: '123456' },
+      () => this.props.processForm(this.state).then( (userAction) => {
+        this.props.history.push(`/users/${userAction.currentUser.id}`);
+      })
+    );
   }
 
   demoButton() {
@@ -47,9 +50,9 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user})
+    this.props.processForm(user)
       .then( (userAction) => {
-        this.props.history.push(`/users/${userAction.currentUser.id}`)
+        this.props.history.push(`/users/${userAction.currentUser.id}`);
       });
   }
 
