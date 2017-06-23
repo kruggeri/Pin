@@ -26,6 +26,7 @@ On a board's show page, all of it's Pin Items are visible. Once a pin is selecte
 The Discovery Feed is the most recent pins created by the user's followers.
 
 
+
 - Implementation Timeline
 
 W1:  - Tues/Wed Do all auth backend and front end portions.  
@@ -48,3 +49,12 @@ W1:  - Tues/Wed Do all auth backend and front end portions.
 W2:  - Mon/Tues, complete user show page, boardpages, pin detail page
      - Wed, create follows and follower pages
      - Thurs/Fri  create home index page, search functionality  
+
+- Implementation Timeline
+
+W1:  - Tues, solidify working skeleton and plan!
+     - Wed/Thurs/Fri create auth sign up/login/logout, header/logo
+     - Sat/Sun, create user show page, boarditems, with seeds
+W2:  - Mon/Tues, complete user show page, boardpages, pin detail page
+     - Wed, create follows and follower pages
+     - Thurs/Fri  create home index page, search functionality   
