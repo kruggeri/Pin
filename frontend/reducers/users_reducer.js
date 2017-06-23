@@ -8,17 +8,15 @@ const defaultState = () => ({
   displayUser: null,
 });
 
-const usersReducer = (state = defaultState(), action) => {
+const UsersReducer = (state = defaultState(), action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_SINGLE_USER:
       const user = action.user;
-      return merge({}, state, {
-        displayUser: user.id
-      })
+      return user; 
     default:
       return state;
   }
 };
 
-export default usersReducer;
+export default UsersReducer;

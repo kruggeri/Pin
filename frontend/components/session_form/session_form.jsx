@@ -41,7 +41,7 @@ class SessionForm extends React.Component {
 
   demoButton() {
     return (
-      <input type="button" onClick={this.handleDemo} value="Demo" />
+      <input className="demo-button" type="button" onClick={this.handleDemo} value="Demo" />
     );
   }
 

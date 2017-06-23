@@ -176,6 +176,15 @@ body {
   width: 235px;
 }
 
+.demo-button {
+  text-decoration: none;
+  font-family: 'Helvetica Neue';
+}
+
+.demo-button:hover {
+  cursor: pointer;
+}
+
 .submit-button:hover {
   cursor: pointer;
 }
@@ -198,7 +207,7 @@ body {
 .header {
   justify-content: space-between;
   display: flex;
-
+  margin-bottom: 5px;
 }
 
 .header-icon {
@@ -246,4 +255,102 @@ body {
 .profile-link-icon {
   font-size: 27px;
   color: black;
+}
+
+.logout-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.profile-link:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+// profile //
+.profile {
+  padding-left: 280px;
+  padding-right: 280px;
+  margin: 80px;
+  border-top: 1px solid #efefef;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-header {
+
+}
+
+.profile-header-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 80px;
+}
+
+.profile-container {
+  max-width: 800px;
+  width: 100%;
+  margin-left: 27%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-box {
+  display: flex;
+}
+
+.profile-info {
+  height: 192px;
+}
+
+.profile-name {
+  min-width: 400px;
+  vertical-align: top;
+}
+
+.username {
+  font-size: 30px;
+}
+
+.profile-name h2 {
+  color: #555;
+  font-size: 48px;
+  letter-spacing: -1.75px;
+  line-height: 56px;
+  word-spacing: -2.75px;
+  hyphens: auto;
+}
+
+.profile-info-right {
+  min-width: 200px;
+  display: inline-block;
+}
+
+.followers-links {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-right: 10px;
+}
+
+.followers, .following {
+  color: #b5b5b5;
+  font-size: 16px;
+  letter-spacing: -.2px;
+  line-height: 18px;
+  word-spacing: 0;
+  font-weight: 500;
+}
+
+.profile-pic-circle {
+  border-radius: 50%;
+  width: 170px;
+  height: 170px;
+  background-color: rgb(239, 239, 239);
+  font-weight: bolder;
+}
+
+.location {
+  font-weight: 500;
 }
