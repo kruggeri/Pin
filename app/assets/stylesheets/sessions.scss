@@ -207,7 +207,8 @@ body {
 .header {
   justify-content: space-between;
   display: flex;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #efefef;
 }
 
 .header-icon {
@@ -227,6 +228,7 @@ body {
   height: 40px;
   width: 100%;
   margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .right-nav {
@@ -250,11 +252,12 @@ body {
 .profile-link {
   margin-top: 15px;
   padding-top: 10px;
+  color: #b5b5b5;
 }
 
 .profile-link-icon {
   font-size: 27px;
-  color: black;
+  color: #b5b5b5;
 }
 
 .logout-button:hover {
@@ -284,8 +287,9 @@ body {
 .profile-header-bar {
   width: 100%;
   display: flex;
-  justify-content: center;
-  height: 80px;
+  margin-top: 20px;
+  color: #b5b5b5;
+  height: 40px;
 }
 
 .profile-container {
@@ -325,32 +329,61 @@ body {
 .profile-info-right {
   min-width: 200px;
   display: inline-block;
+  max-width: 200px;
 }
 
 .followers-links {
   display: flex;
-  margin-top: 10px;
+  margin-top: 30px;
   margin-bottom: 10px;
   padding-right: 10px;
 }
 
-.followers, .following {
+.followers, .following, .location, .website, .about {
   color: #b5b5b5;
   font-size: 16px;
   letter-spacing: -.2px;
   line-height: 18px;
   word-spacing: 0;
   font-weight: 500;
+  word-break: break-word;
+  padding: 1px;
+  padding-right: 15px;
+  max-width: 200px;
 }
 
-.profile-pic-circle {
+
+.profile-pic-circle img {
   border-radius: 50%;
   width: 170px;
   height: 170px;
-  background-color: rgb(239, 239, 239);
-  font-weight: bolder;
+  margin-top: 30px;
 }
 
-.location {
-  font-weight: 500;
+.profile-header {
+    font-size: 27px;
+    color: black;
+}
+
+.gear {
+  margin-left: 28%;
+  height: 20px;
+  font-size: 30px;
+}
+
+.follow-button {
+  margin-left: 65%;
+  font-size: 16px;
+  color: #555;
+  background-color: #efefef;
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  width: 80px;
+
+}
+
+.follow-button:hover {
+  cursor: pointer;
 }

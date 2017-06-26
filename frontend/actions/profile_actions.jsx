@@ -1,6 +1,5 @@
 export const RECEIVE_SINGLE_USER = "RECEIVE_SINGLE_USER";
 
-
 import * as APIUtil from '../util/profile_api_util';
 
 export const requestSingleUser = (id) => (dispatch) => {

@@ -2,16 +2,20 @@
 #
 # Table name: users
 #
-#  id                :integer          not null, primary key
-#  username          :string           not null
-#  firstname         :string
-#  lastname          :string
-#  email             :string
-#  about             :text
-#  location          :string
-#  personal_site_url :string
-#  password_digest   :string           not null
-#  session_token     :string           not null
+#  id                  :integer          not null, primary key
+#  username            :string           not null
+#  firstname           :string
+#  lastname            :string
+#  email               :string
+#  about               :text
+#  location            :string
+#  personal_site_url   :string
+#  password_digest     :string           not null
+#  session_token       :string           not null
+#  avatar_file_name    :string
+#  avatar_content_type :string
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
 #
 
 class User < ActiveRecord::Base
@@ -21,6 +25,22 @@ class User < ActiveRecord::Base
   validates :username, :password_digest, :session_token, presence: true
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
+
+  has_attached_file :avatar, default_url: "default_avatar.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
+  has_many :boards
+
+  has_many :pinnings,
+  through: :boards
+
+  has_many :pins,
+  through: :pinnings
+
+  has_many :own_pins,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: "Pin"
 
   after_initialize :ensure_session_token
 

@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: boards
+#
+#  id          :integer          not null, primary key
+#  title       :string           not null
+#  description :text
+#  user_id     :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+class Board < ActiveRecord::Base
+  validates :title, :user, presence: true
+
+  belongs_to :user,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: "User"
+
+  has_many :pinnings,
+  primary_key: :id,
+  foreign_key: :board_id,
+  class_name: "Pinning",
+  dependent: :destroy
+
+  has_many :pins,
+  through: :pinnings
+end

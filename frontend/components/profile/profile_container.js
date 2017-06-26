@@ -3,9 +3,10 @@ import Profile from './profile';
 import { requestSingleUser } from '../../actions/profile_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return { userId: ownProps.match.params.userId,
-  user: state.user }
+            user: state.user,
+            currentUser: state.session.currentUser
+            }
 };
 
 const mapDispatchToProps = dispatch => ({

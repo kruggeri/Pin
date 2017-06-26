@@ -6,6 +6,8 @@ class Profile extends Component {
   constructor(props) {
    super(props);
 
+   this.profileHeader = this.profileHeader.bind(this);
+
  }
   componentDidMount() {
     this.props.requestSingleUser(this.props.match.params.userId);
@@ -17,18 +19,28 @@ class Profile extends Component {
     }
   }
 
+  profileHeader() {
 
+    if (this.props.currentUser.id === this.props.user.id) {
+      return (
+        <div className="gear">
+          <i className="fa fa-cog" />
+        </div>
+      );
+    } else {
+      return (
+        <input className="follow-button" type="button" onClick="" value="Follow" />
+      );
+    }
+  }
 
 
   render() {
-    console.log(this.props);
+    debugger
     return(
       <section className="Profile">
         <div className="profile-header-bar">
-          <div className="profile-header">
-            HEADER GOES HERE
-          </div>
-
+          {this.profileHeader()}
         </div>
         <div className="profile-container">
           <div className="profile-box">
@@ -49,17 +61,20 @@ class Profile extends Component {
               <div className="location">
                 {this.props.user.location}
               </div>
+              <div className="website">
+                {this.props.user.personal_site_url}
+              </div>
+              <div className="about">
+                {this.props.user.about}
+              </div>
 
 
             </div>
             <div className="profile-pic-circle">
+              <img src={this.props.user.avatar_url}/>
             </div>
 
-
-
           </div>
-
-
         </div>
       </section>
     )
