@@ -28,13 +28,9 @@ class Pin < ActiveRecord::Base
   foreign_key: :user_id,
   class_name: "User"
 
-  has_many :pinnings,
+  belongs_to :board,
   primary_key: :id,
-  foreign_key: :pin_id,
-  class_name: "Pinning",
-  dependent: :destroy
-
-  has_many :boards,
-  through: :pinnings
+  foreign_key: :board_id,
+  class_name: "Board"
 
 end

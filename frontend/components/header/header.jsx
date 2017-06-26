@@ -8,9 +8,13 @@ const Header = ({logout, currentUser}) => {
   return (
     <div className="header-container">
       <div className="header">
-      <div className="header-icon">
-        <img src={window.images.pin_icon_small} />
-      </div>
+        <Link className="header-link-icon" to={`/home`}>
+          <div className="header-icon">
+
+          <img src={window.images.pin_icon_small} />
+          </div>
+
+        </Link>
 
       <div className="center-nav">  </div>
 
@@ -26,7 +30,7 @@ const Header = ({logout, currentUser}) => {
 
         <div className="profile-link">
           <Link className="profile-link-icon" to={`/users/${currentUser.id}`}>
-            <i className="fa fa-user-circle"/>
+            <img src={window.images.user_icon} />
           </Link>
         </div>
       </div>

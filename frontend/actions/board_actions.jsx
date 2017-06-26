@@ -5,12 +5,12 @@ export const DELETE_BOARD = "DELETE_BOARD";
 
 export const receiveBoard = (board) => ({
   type: RECEIVE_BOARD,
-  board
+  board: board,
 });
 
 export const removeBoard = (board) => ({
   type: DELETE_BOARD,
-  board
+  board: board,
 });
 
 export const fetchBoard = (boardId) => dispatch => (

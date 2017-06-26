@@ -12,7 +12,6 @@ import {
 import DiscoveryContainer from './discovery/discovery_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import  HeaderContainer  from './header/header_container';
-// import ProfileContainer from './profile/profile_container';
 import BoardShowContainer from './boards/board_show_container';
 
 

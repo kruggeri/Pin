@@ -36,7 +36,6 @@ class Profile extends Component {
 
 
   render() {
-    debugger
     return(
       <section className="Profile">
         <div className="profile-header-bar">

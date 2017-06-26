@@ -1,12 +1,12 @@
-import merge from 'lodash-merge';
+import { merge } from 'lodash';
 import { RECEIVE_BOARD, DELETE_BOARD } from '../actions/board_actions'
 
-const defaultState = () => ({
+const defaultState = {
   id: 0,
   title: "",
   description: "",
   pins: []
-});
+};
 
 const BoardReducer = (state = defaultState, action) => {
   Object.freeze(state);

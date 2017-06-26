@@ -18,12 +18,9 @@ class Board < ActiveRecord::Base
   foreign_key: :user_id,
   class_name: "User"
 
-  has_many :pinnings,
-  primary_key: :id,
-  foreign_key: :board_id,
-  class_name: "Pinning",
-  dependent: :destroy
 
   has_many :pins,
-  through: :pinnings
+  primary_key: :id,
+  foreign_key: :board_id,
+  class_name: "Pin"
 end

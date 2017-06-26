@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import BoardShow from './board_show';
-import { fetchBoard, deleteBoard } from '../../actions/board_actions';
+import { fetchBoard, deleteBoard, receiveBoard } from '../../actions/board_actions';
 import { requestSingleUser } from '../../actions/profile_actions';
-import { deletePinning } from '../../actions/pinning_actions';
+
 
 const mapStateToProps = (state) => {
   return ({
@@ -15,9 +15,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   fetchBoard: (board) => dispatch(fetchBoard(board)),
-  fetchUser: (userId) => dispatch(fetchUser(userId)),
+  requestSingleUser: (userId) => dispatch(requestSingleUser(userId)),
   deleteBoard: (boardId) => dispatch(deleteBoard(boardId)),
-  deletePinning: (pinning) => dispatch(deletePinning(pinning))
 });
 
 export default connect(

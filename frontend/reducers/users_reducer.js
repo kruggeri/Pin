@@ -8,12 +8,12 @@ const defaultState = () => ({
   displayUser: null,
 });
 
-const UsersReducer = (state = defaultState(), action) => {
+const UsersReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_SINGLE_USER:
       const user = action.user;
-      return user; 
+      return user;
     default:
       return state;
   }

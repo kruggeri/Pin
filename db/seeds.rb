@@ -86,7 +86,7 @@ User.create!(
   avatar: File.open('app/assets/images/brook_avatar.png')
 )
 
-## BOARDS ##
+###
 
 Board.create!(
   title: "Paintings",
@@ -94,7 +94,7 @@ Board.create!(
   user_id: User.find_by(username: "Kate").id
 )
 
-######
+##
 
 Pin.create!(
     title: "Dani Levine",
@@ -105,13 +105,6 @@ Pin.create!(
     board_id: Board.find_by(title: "Paintings").id,
   )
 
-Pinning.create!(
-  board_id: Board.find_by(title: "Paintings").id,
-  pin_id: Pin.find_by(title: "Dani Levine").id
-)
-
-####
-
 Pin.create!(
     title: "Edwin Smalling",
     description: "Good Fortune, 2016",
@@ -119,28 +112,15 @@ Pin.create!(
     image: File.open('app/assets/images/painting_board1/edwin.jpg'),
     user_id: User.find_by(username: "Kate").id,
     board_id: Board.find_by(title: "Paintings").id,
-
   )
-
-  Pinning.create!(
-    board_id: Board.find_by(title: "Painting").id,
-    pin_id: Pin.find_by(title: "Dani Levine").id
-  )
-
 
 Pin.create!(
     title: "Anna Betbeze",
     description: "All That's Left, 2016, Wool, acid dyes, ash",
     image_url: "www.ninajohnson.com/exhibitions/anna-betbeze-hot-fruit",
     user_id: User.find_by(username: "Kate").id,
-    image: File.open('app/assets/images/painting_board1/annabetbeze.jpg'),
+    image: File.open('app/assets/images/painting_board1/annabetbeze.jpeg'),
     board_id: Board.find_by(title: "Paintings").id
-
-  )
-
-  Pinning.create!(
-    board_id: Board.find_by(title: "Painting").id,
-    pin_id: Pin.find_by(title: "Anna Betbeze").id
   )
 
 Pin.create!(
@@ -149,28 +129,16 @@ Pin.create!(
     user_id: User.find_by(username: "Kate").id,
     image: File.open('app/assets/images/painting_board1/molly.jpg'),
     board_id: Board.find_by(title: "Paintings").id
-
   )
 
-  Pinning.create!(
-    board_id: Board.find_by(title: "Painting").id,
-    pin_id: Pin.find_by(title: "Molly Zuckerman-Hartung").id
+Pin.create!(
+    title: "Anoka Faruqee",
+    image_url: "www.anokafaruqee.com/",
+    description: "Acrylic on canvas",
+    user_id: User.find_by(username: "Kate").id,
+    image: File.open('app/assets/images/painting_board1/anoka.jpg'),
+    board_id: Board.find_by(title: "Paintings").id
   )
-
-  Pin.create!(
-      title: "Anoka Faruqee",
-      image_url: "www.anokafaruqee.com/",
-      description: "Acrylic on canvas",
-      user_id: User.find_by(username: "Kate").id,
-      image: File.open('app/assets/images/painting_board1/anoka.jpg'),
-      board_id: Board.find_by(title: "Paintings").id
-
-    )
-
-    Pinning.create!(
-      board_id: Board.find_by(title: "Painting").id,
-      pin_id: Pin.find_by(title: "Anoka Faruqee").id
-    )
 
 Pin.create!(
     title: "Tschabalala Self",
@@ -178,70 +146,40 @@ Pin.create!(
     user_id: User.find_by(username: "Kate").id,
     image: File.open('app/assets/images/painting_board1/tschaba.png'),
     board_id: Board.find_by(title: "Paintings").id
-
   )
 
-  Pinning.create!(
-    board_id: Board.find_by(title: "Painting").id,
-    pin_id: Pin.find_by(title: "Tschabalala Self").id
+Pin.create!(
+    title: "Sarah Faux",
+    image_url: "www.sarahfaux.net/",
+    description: "Blue becomes you, 2016",
+    user_id: User.find_by(username: "Kate").id,
+    image: File.open('app/assets/images/painting_board1/sarah.jpg'),
+    board_id: Board.find_by(title: "Paintings").id
   )
 
-  Pin.create!(
-      title: "Sarah Faux",
-      image_url: "www.sarahfaux.net/",
-      description: "Blue becomes you, 2016",
-      user_id: User.find_by(username: "Kate").id,
-      image: File.open('app/assets/images/painting_board1/sarah.jpg'),
-      board_id: Board.find_by(title: "Paintings").id
+Pin.create!(
+    title: "Erin Ikeler",
+    image_url: "www.eeikeler.com/",
+    description: "HISTORY REPEATS (2), 2016",
+    user_id: User.find_by(username: "Kate").id,
+    image: File.open('app/assets/images/painting_board1/erin.jpg'),
+    board_id: Board.find_by(title: "Paintings").id
+  )
 
-    )
+Pin.create!(
+    title: "Kyle Goldbach",
+    image_url: "www.kylegoldbach.com/",
+    description: "HISTORY REPEATS (2), 2016",
+    user_id: User.find_by(username: "Kate").id,
+    image: File.open('app/assets/images/painting_board1/kyle.jpg'),
+    board_id: Board.find_by(title: "Paintings").id
+  )
 
-    Pinning.create!(
-      board_id: Board.find_by(title: "Painting").id,
-      pin_id: Pin.find_by(title: "Sarah Faux").id
-    )
-
-    Pin.create!(
-        title: "Erin Ikeler",
-        image_url: "www.eeikeler.com/",
-        description: "HISTORY REPEATS (2), 2016",
-        user_id: User.find_by(username: "Kate").id,
-        image: File.open('app/assets/images/painting_board1/erin.jpg'),
-        board_id: Board.find_by(title: "Paintings").id
-
-      )
-
-      Pinning.create!(
-        board_id: Board.find_by(title: "Painting").id,
-        pin_id: Pin.find_by(title: "Erin Ikeler").id
-      )
-
-      Pin.create!(
-          title: "Kyle Goldbach",
-          image_url: "www.kylegoldbach.com/",
-          description: "HISTORY REPEATS (2), 2016",
-          user_id: User.find_by(username: "Kate").id,
-          image: File.open('app/assets/images/painting_board1/kyle.jpg'),
-          board_id: Board.find_by(title: "Paintings").id
-
-        )
-
-        Pinning.create!(
-          board_id: Board.find_by(title: "Painting").id,
-          pin_id: Pin.find_by(title: "Kyle Goldbach").id
-        )
-
-        Pin.create!(
-            title: "Zoe Walsh",
-            image_url: "www.zoecwalsh.com/",
-            description: "Untitled, 2017",
-            user_id: User.find_by(username: "Kate").id,
-            image: File.open('app/assets/images/painting_board1/zoe.jpg'),
-            board_id: Board.find_by(title: "Paintings").id
-
-          )
-
-          Pinning.create!(
-            board_id: Board.find_by(title: "Painting").id,
-            pin_id: Pin.find_by(title: "Zoe Walsh").id
-          )
+Pin.create!(
+    title: "Zoe Walsh",
+    image_url: "www.zoecwalsh.com/",
+    description: "Untitled, 2017",
+    user_id: User.find_by(username: "Kate").id,
+    image: File.open('app/assets/images/painting_board1/zoe.jpg'),
+    board_id: Board.find_by(title: "Paintings").id
+  )

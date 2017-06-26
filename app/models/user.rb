@@ -30,17 +30,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   has_many :boards
-
-  has_many :pinnings,
-  through: :boards
-
-  has_many :pins,
-  through: :pinnings
-
-  has_many :own_pins,
-  primary_key: :id,
-  foreign_key: :user_id,
-  class_name: "Pin"
+  has_many :pins
 
   after_initialize :ensure_session_token
 
