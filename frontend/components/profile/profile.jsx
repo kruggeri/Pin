@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 import { requestSingleUser, receiveSingleUser } from '../../actions/profile_actions';
+import BoardIndexContainer from '../boards/board_index_item_container';
 
 class Profile extends Component {
   constructor(props) {
@@ -75,7 +76,14 @@ class Profile extends Component {
 
           </div>
         </div>
+
+        <div>
+          { BoardIndexContainer }
+        </div>
       </section>
+
+
+
     )
 
   }

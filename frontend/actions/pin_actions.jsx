@@ -5,12 +5,12 @@ export const RECEIVE_SINGLE_PIN = "RECEIVE_SINGLE_PIN";
 
 export const receiveAllPins = (pins) => ({
   type: RECEIVE_ALL_PINS,
-  pins
+  pins: pins,
 });
 
 export const receiveSinglePin = (pin) => ({
   type: RECEIVE_SINGLE_PIN,
-  pin
+  pin: pin,
 });
 
 //
