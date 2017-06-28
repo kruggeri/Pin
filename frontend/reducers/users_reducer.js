@@ -4,11 +4,12 @@ import {
   RECEIVE_SINGLE_USER,
 } from '../actions/profile_actions';
 
-const defaultState = () => ({
+const defaultState = {
   displayUser: null,
-});
+  boards: []
+};
 
-const UsersReducer = (state = {}, action) => {
+const UsersReducer = (state = defaultState, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_SINGLE_USER:

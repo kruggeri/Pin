@@ -4,8 +4,7 @@ import values from 'lodash/values';
 
 const BoardsIndexItem = ({ board }) => {
 
-  const boardPins = values(board.pins);
-  debugger 
+  const boardPins = values(board.pins); 
   return (
     <Link to={`/boards/${board.id}`}>
 

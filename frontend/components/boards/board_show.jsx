@@ -1,5 +1,6 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
+
 
 class BoardShow extends React.Component {
   constructor(props) {
@@ -19,8 +20,7 @@ class BoardShow extends React.Component {
     }
 
     const { pins, board, currentUser, user } = this.props;
-    console.log("A LOT OF TEXT WHERE IS IT!!!!");
-    console.log(this.props);
+
     return (
 
       <section className="board-show-container">
@@ -51,7 +51,9 @@ class BoardShow extends React.Component {
 
               <div className="profile-pic">
                 <div className="profile-circle">
+                  <Link to={`/users/${this.props.user.id}`}>
                     <img src={this.props.user.avatar_url}/>
+                  </Link>
                 </div>
               </div>
 

@@ -8,10 +8,6 @@ json.location user.location
 json.personal_site_url user.personal_site_url
 json.avatar_url asset_path(user.avatar.url)
 
-json.boards do
-  user.boards.each do |board|
-    json.set! board.id do
-      json.partial! 'api/boards/board.json.jbuilder', board: board
-    end
-  end
+json.boards user.boards do |board|
+  json.partial! 'api/boards/board.json.jbuilder', board: board
 end

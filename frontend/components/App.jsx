@@ -13,7 +13,6 @@ import DiscoveryContainer from './discovery/discovery_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import  HeaderContainer  from './header/header_container';
 import BoardShowContainer from './boards/board_show_container';
-import BoardsIndexContainer from './boards/board_index_item_container';
 import ProfileContainer from './profile/profile_container';
 
 const App = () => (

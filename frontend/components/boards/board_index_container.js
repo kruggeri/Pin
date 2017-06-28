@@ -3,7 +3,6 @@ import { fetchBoard, createBoard } from '../../actions/board_actions';
 import BoardsIndexItem from './boards_index_item';
 
 const mapStateToProps = (state) => {
-  debugger 
   return ({
     boards: state.user.boards,
     currentUser: state.session.currentUser,

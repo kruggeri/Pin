@@ -1,4 +1,4 @@
-html, body, button, h2, input, ul, input, link, li {
+html, body, button, h2, input, ul, input, link, li, a {
   margin: 0;
   border: 0;
   padding: 0;
@@ -19,6 +19,7 @@ body {
   height: 100%;
   font-weight: lighter;
   background-color: white;
+
 }
 
 
@@ -299,18 +300,22 @@ body {
 .profile-header-bar {
   width: 100%;
   display: flex;
-  margin-top: 20px;
+  margin-top: 50px;
   color: #b5b5b5;
   height: 40px;
 }
 
 .profile-container {
-  max-width: 800px;
   width: 100%;
-  margin-left: 27%;
   display: flex;
   justify-content: space-between;
   margin-top: 100px;
+  flex-wrap: wrap;
+}
+
+.profile-box-large {
+  margin-left: 27%;
+  padding-bottom: 50px;
 }
 
 .profile-box {
@@ -340,9 +345,8 @@ body {
 }
 
 .profile-info-right {
-  min-width: 200px;
+  width: 200px;
   display: inline-block;
-  max-width: 200px;
 }
 
 .followers-links {
@@ -399,6 +403,90 @@ body {
 
 .follow-button:hover {
   cursor: pointer;
+}
+
+.board-index-item {
+  width: 325px;
+  height: 295px;
+}
+
+.board-index-item-container {
+  width: 300px;
+  height: 300px;
+}
+
+.board-index-item-icons {
+  display: flex;
+}
+
+.board-index-icons {
+  display: flex;
+  width: 300px;
+  height: 200px;
+}
+
+.left-icon-container {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px 0px 0px 10px;
+  margin: 1px;
+}
+
+.left-icon img {
+  width: 100%;
+}
+
+.left-icon-container img {
+  width: 100%
+}
+
+.right-icon-container {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  margin-left: 1px;
+}
+
+.right-top-image-container {
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+
+.right-top-image-container img {
+  width: 100%;
+  border-radius: 0px 10px 0px 0px;
+}
+
+.right-bottom-image-container {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  overflow: hidden;
+}
+
+.right-bottom-image-container img {
+  width: 100%;
+  border-radius: 0px 0px 10px 0px;
+}
+
+.board-index-title {
+  color: #555;
+  margin-left: 5%;
+  margin-top: 10px;
+  word-spacing: -1.3px;
+  font-size: 18px;
+  letter-spacing: -.2px;
+  line-height: 18px;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.board-index-container {
+  display: flex;
+  margin-left: 5%;
+  flex-wrap: wrap;
 }
 
 //boards
@@ -531,4 +619,40 @@ body {
   line-height: 14px;
   word-spacing: 0;
   font-weight: bold;
+}
+
+.create-board-item {
+  width: 300px;
+  height: 200px;
+  background-color: #efefef;
+  border-radius: 10px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.plus-icon img {
+  width: 64px;
+  height: 51.38px;
+}
+
+.plus-icon {
+  display: flex;
+  margin-top: 25%;
+}
+
+.boards-button, .pins-button {
+  color: #b5b5b5;
+  margin-right: 5%;
+  margin-top: 10px;
+  word-spacing: -1.3px;
+  font-size: 18px;
+  letter-spacing: -.2px;
+  line-height: 18px;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.profile-buttons {
+  display: flex;
 }
