@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 
-
 class BoardShow extends React.Component {
   constructor(props) {
     super(props);
@@ -18,7 +17,7 @@ class BoardShow extends React.Component {
     if (!this.props.board) {
       return <div></div>
     }
-
+    debugger 
     const { pins, board, currentUser, user } = this.props;
 
     return (
@@ -67,7 +66,7 @@ class BoardShow extends React.Component {
           { pins.map( (pin) => {
               return (
 
-
+                <Link to={`/pins/${pin.id}`} key={pin.id}>
                   <li className="board-show-pins">
                     <img src={pin.image_source}/>
 
@@ -95,7 +94,7 @@ class BoardShow extends React.Component {
                     </div>
                   </div>
                 </li>
-
+              </Link>
 
               );}
             )

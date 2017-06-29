@@ -8,10 +8,18 @@ export const receiveAllPins = (pins) => ({
   pins: pins,
 });
 
-export const receiveSinglePin = (pin) => ({
+export const receiveSinglePin = (pin) => {
+  return {
   type: RECEIVE_SINGLE_PIN,
-  pin: pin,
-});
+  pin: pin, }
+};
+
+export const removePin = id => ({
+  type: REMOVE_PIN,
+  id
+})
+
+
 
 //
 

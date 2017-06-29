@@ -1,4 +1,4 @@
-html, body, button, h2, input, ul, input, link, li, a {
+html, body, button, h2, input, ul, input, link, li, a, button {
   margin: 0;
   border: 0;
   padding: 0;
@@ -8,6 +8,7 @@ html, body, button, h2, input, ul, input, link, li, a {
   text-decoration: inherit;
   color: inherit;
   background: transparent;
+  outline: none
 }
 
 
@@ -548,6 +549,17 @@ body {
   border-radius: 10px;
 }
 
+.board-show-pins:hover {
+  cursor: zoom-in;
+  -moz-box-shadow:    inset 0 0 40px #D3D3D3;
+  -webkit-box-shadow: inset 0 0 40px #D3D3D3;
+  box-shadow:         inset 0 0 40px #D3D3D3;
+  border-radius: 10px;
+}
+
+
+
+
 .board-pin-container {
   display: flex;
   flex-wrap: wrap;
@@ -655,4 +667,261 @@ body {
 
 .profile-buttons {
   display: flex;
+}
+
+.modal-root {
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  position: absolute;
+}
+
+.close-modal {
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    position: fixed;
+    z-index: 1050;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.close-modal:hover {
+  cursor: pointer;
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 625px;
+    max-width: 100%;
+    height: 350px;
+    max-height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 1010;
+    box-shadow: 0 0 60px 1px rgba(0, 0, 0, 0.4);
+}
+
+.board-form {
+  width: 620px;
+  max-width: 100%;
+  height: 350px;
+  max-height: 100%;
+  border-radius: 10px;
+}
+
+.board-form h2 {
+  color: #555;
+  padding: 16px;
+  font-size: 24px;
+  letter-spacing: -.3px;
+  line-height: 28px;
+  word-spacing: -2px;
+  font-weight: 600;
+}
+
+.board-form label {
+  display: flex;
+  padding: 10px;
+  height: 88px;
+  border-top: 1px solid #efefef;
+}
+
+.board-form label h2 {
+  font-size: 16px;
+  line-height: 28px;
+  word-spacing: -2px;
+  width: 25%;
+  color: #555;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+
+
+.board-form-input {
+  width: 75%;
+  border-radius: 4px;
+  cursor: text;
+  height: 40px;
+  background-color: #efefef;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.board-form input {
+  width: 75%;
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 4px;
+  height: 40px;
+  background-color: #efefef;
+  color: #555;
+}
+
+.board-form-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.create-board-button {
+  background-color: #efefef;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 14px;
+  padding-right: 14px;
+  border-radius: 4px;
+}
+
+.create-board-button div {
+  color: #b5b5b5;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.create-board-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.create-create-button {
+  background-color: white;
+}
+
+.pin-show-page {
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  justify-content: center;
+  margin: 32px auto;
+  width: 100%;
+  margin-top: 70px;
+  margin-bottom: 0px;
+}
+
+.pin-show-page:hover {
+  cursor: zoom-out;
+}
+
+.close-up-container {
+  cursor: auto;
+  max-width: 628px;
+  margin-top: 50px;
+  background-color: white;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 50px;
+}
+
+.pin-show-image-container {
+  max-width: 564px;
+}
+
+.pin-show-image-container img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.close-up-header {
+  top: 0px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.pin-show-guts {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.post-info {
+  display: flex;
+}
+
+.post-info a {
+  padding-right: 20px;
+}
+
+.post-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.pin-show-guts-bottom {
+  color: #717171;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: sans-serif;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 20px;
+}
+
+.pin-image-url {
+  margin-left: 5%;
+  margin-bottom: 20px;
+}
+
+.pin-image-url a {
+  font-weight: 700;
+}
+
+.pin-info-top {
+  font-size: 15px;
+  color: #555;
+}
+
+.pin-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  color: #555;
+}
+
+.pin-info-bottom {
+  display: flex;
+}
+
+.pin-show-title {
+  margin-left: 10px;
+  font-weight: 700;
+}
+
+.pin-it img {
+  width: 30px;
+}
+
+.pin-it {
+  margin-right: 1px;
+}
+
+.pin-button-container {
+  width: 50px;
+  height: 50px;
+  background-color: #555;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

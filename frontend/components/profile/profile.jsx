@@ -3,7 +3,6 @@ import { Route } from 'react-router-dom'
 import { requestSingleUser, receiveSingleUser } from '../../actions/profile_actions';
 import BoardIndexContainer from '../boards/board_index_container';
 import { Link } from 'react-router-dom';
-import BoardCreateModal from '../modals/board_create_modal';
 import BoardCreateFormContainer from '../boards/board_create_form_container';
 
 class Profile extends Component {
@@ -12,6 +11,7 @@ class Profile extends Component {
 
    this.profileHeader = this.profileHeader.bind(this);
    this.createBoardButton = this.createBoardButton.bind(this);
+   this.openModal = this.openModal.bind(this);
 
  }
   componentDidMount() {
@@ -26,6 +26,7 @@ class Profile extends Component {
 
   profileHeader() {
 
+
     if (this.props.currentUser.id === parseInt(this.props.userId)) {
       return (
         <div className="gear">
@@ -39,19 +40,21 @@ class Profile extends Component {
     }
   }
 
-  // <li className="create-board-item">
-  //     <div className="plus-icon">
-  //       <img src={window.images.plus}/>
-  //     </div>
-        // </li>
+  openModal() {
+    this.props.openModal(<BoardCreateFormContainer/>)
+  }
 
   createBoardButton() {
 
     { if (parseInt(this.props.userId) === this.props.currentUser.id) {
       return (
-
-            <input className="create-board-button" type="button" onClick={BoardCreateModal} />
-
+        <li className="create-board-item">
+            <button className="create-board-button" onClick={this.openModal} >
+              <div className="plus-icon">
+                <img src={window.images.plus}/>
+              </div>
+            </button>
+        </li>
 
       );
     } else {
@@ -61,6 +64,10 @@ class Profile extends Component {
 
   }
 
+  getBoardPins(board, idx) {
+    return (board.pins[idx] ? board.pins[idx].image_source : window.images.default_pin)
+
+  }
 
   render() {
     return(
@@ -124,21 +131,21 @@ class Profile extends Component {
 
             { this.props.user.boards.map( (board) => {
               return (
-                <Link to={`/boards/${board.id}`}>
+                <Link to={`/boards/${board.id}`} key={board.id}>
                 <li className="board-index-item">
                   <div className="board-index-item-container">
                     <div className="board-index-icons">
                       <div className="left-icon-container">
-                        <img src={board.pins[0].image_source}/>
+                        <img src={this.getBoardPins(board, 0)}/>
                       </div>
 
                       <div className="right-icon-container">
                         <div className="right-top-image-container">
-                          <img src={board.pins[1].image_source}/>
+                            <img src={this.getBoardPins(board, 1)}/>
                         </div>
 
                         <div className="right-bottom-image-container">
-                          <img src={board.pins[2].image_source}/>
+                            <img src={this.getBoardPins(board, 2)}/>
                         </div>
 
 
