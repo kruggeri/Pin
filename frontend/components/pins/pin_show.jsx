@@ -20,11 +20,11 @@ class PinShow extends React.Component {
   }
 
   render() {
-
     if (this.props.pin) {
       const pin = this.props.pin
       return(
-          <div className="pin-show-page">
+        <div className="test" onClick={this.props.history.goBack}>
+          <div className="pin-show-page" >
             <div className="close-up-container">
               <div className="close-up-header">
                 <div className="pin-button-container">
@@ -71,6 +71,7 @@ class PinShow extends React.Component {
               </div>
             </div>
           </div>
+        </div>
         </div>
       );
     } else {

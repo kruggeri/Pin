@@ -12,12 +12,28 @@ class BoardShow extends React.Component {
 
   }
 
+  createPin() {
+    if (this.props.user.id === this.props.currentUser.id) {
+      return (
+        <li className="create-pin">
+            <button className="create-board-button" onClick={this.openModal} >
+              <div className="plus-icon">
+                <img src={window.images.plus}/>
+              </div>
+            </button>
+        </li>
+      );
+    } else {
+      return "";
+    }
+  }
+
+
 
   render() {
     if (!this.props.board) {
       return <div></div>
     }
-    debugger 
     const { pins, board, currentUser, user } = this.props;
 
     return (
@@ -63,6 +79,7 @@ class BoardShow extends React.Component {
 
         <div className="pins">
           <ul className="board-pin-container">
+            {this.createPin()}
           { pins.map( (pin) => {
               return (
 

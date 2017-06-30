@@ -210,13 +210,10 @@ body {
 .header {
   justify-content: space-between;
   display: flex;
-  margin-bottom: 15px;
   border-bottom: 1px solid #efefef;
-  position: fixed;
   width: 100%;
   top:0;
   left: 0;
-  background-color: white;
 }
 
 .header-icon {
@@ -805,10 +802,10 @@ button:hover {
   background-color: rgb(238, 238, 238);
   display: flex;
   justify-content: center;
-  margin: 32px auto;
   width: 100%;
-  margin-top: 70px;
   margin-bottom: 0px;
+  min-height: calc(100vh - 70px);
+
 }
 
 .pin-show-page:hover {
@@ -828,6 +825,7 @@ button:hover {
   padding-left: 30px;
   padding-right: 30px;
   margin-bottom: 50px;
+  z-index: 1000;
 }
 
 .pin-show-image-container {
@@ -856,6 +854,7 @@ button:hover {
 
 .post-info {
   display: flex;
+  padding-bottom: 20px;
 }
 
 .post-info a {
