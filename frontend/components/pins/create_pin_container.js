@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 import { createPin } from '../../actions/pin_actions';
-import PinCreateForm from './pin_create_form';
+import PinCreateForm from './create_pin_form';
 import { close } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => ({
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  board: state.board,
 });
 
 const mapDispatchToProps = (dispatch) => ({

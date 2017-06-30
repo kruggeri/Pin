@@ -8,15 +8,23 @@ class PinCreateForm extends React.Component {
       title: "",
       description: "",
       image_url: "",
-      board_id: "",
+      board_id: props.board.id,
     };
-
+    console.log(props);
     this.handleCreate = this.handleCreate.bind(this);
     this.update = this.update.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   handleCreate(e) {
-    this.props.createPin(this.state).then(() => this.props.closeModal());
+    var formData = new FormData();
+    formData.append("pin[title]", this.state.title);
+    formData.append("pin[description]", this.state.description);
+    formData.append("pin[image]", this.state.imageFile);
+    formData.append("pin[board_id]", this.state.board_id);
+    formData.append("pin[image_url]", this.state.image_url);
+
+    this.props.createPin(formData).then(() => this.props.closeModal());
   }
 
   update(field) {
@@ -25,44 +33,42 @@ class PinCreateForm extends React.Component {
     });
   }
 
-  boardList() {
-      const boards = this.props.currentUser.boards;
-      const boardTitles = Object.keys(boards).map( title => {
-        const boardId = boards[title];
-        return (
-        <li key={boardId} className="pin-save-board">
-          <div>{title}</div>
-          <div onClick={ (e) => { this.setState({board_id: boardId}); this.handleCreate(e); } } className="pin-save-final">
-            <i className="fa fa-thumb-tack" aria-hidden="true"></i>
-            <div className="pin-save">Save</div>
-          </div>
-        </li>
-        );
-      });
-      return boardNames;
+  updateFile(e) {
+    var file = e.currentTarget.files[0];
+    var fileReader = new FileReader();
+    fileReader.onloadend = function () {
+      this.setState({imageFile: file, imageUrl: fileReader.restult });
+    }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
+
+
   render() {
+
     return(
         <form className="create-pin-form">
           <div className="create-pin-header">
             <h2>Create pin</h2>
-            <button className="close-create-button">
+            <button className="close-create-button" onClick={this.props.closeModal}>
               <h2>X</h2>
             </button>
           </div>
 
-          <label>
+          <label className="title-box">
             <h2 className="pin-form-title">Title</h2>
             <div className="pin-form-input">
               <input type="text"
-                    placeholder="Give it a name'"
+                    placeholder="Give it a name"
                     onChange={this.update('title')}>
               </input>
             </div>
           </label>
 
-          <label>
+          <label className="description-box">
             <h2 className="pin-form-description">Descripion</h2>
               <div className="pin-form-input">
                 <input type="text"
@@ -72,30 +78,31 @@ class PinCreateForm extends React.Component {
               </div>
           </label>
 
+          <label className="credit-box">
+            <h2 className="pin-form-credit">Image Credit</h2>
+              <div className="pin-form-input">
+                <input type="text"
+                    placeholder="Credit this pin"
+                    onChange={this.update('image_url')}>
+                </input>
+              </div>
+          </label>
 
-          <input type="text" placeholder="Image URL"
-            value={this.state.image}
-            onChange={this.update('image')}
-          />
-          <input type="text" placeholder="https://..."
-            value={this.state.url}
-            onChange={this.update('url')}
-          />
-          <span id="urlError"></span>
-          <br/>
-          <textarea placeholder="Tell us about this pin..."
-            value={this.state.description}
-            onChange={this.update('description')}
-          />
-          <br/>
+
+
+          <label className="upload-buttons">
+            <div className="update-file">
+              <input type="file" onChange={this.updateFile}/>
+            </div>
+
+            <div className="create-pin-button-container">
+              <button className="create-pin-button" onClick={this.handleCreate}>Create Pin</button>
+            </div>
+          </label>
+
+          <img src={this.state.imageUrl}/>
         </form>
 
-
-        <br/>
-        <ul>
-          {this.boardList()}
-        </ul>
-      </div>
     )
   }
 }

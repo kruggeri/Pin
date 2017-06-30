@@ -924,3 +924,144 @@ button:hover {
   flex-direction: row;
   justify-content: center;
 }
+
+// create-pin-form //
+
+.create-pin-form {
+  max-width: 100%;
+  max-height: 100%;
+  height: 350px;
+}
+
+.create-pin-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  height: 15%;
+}
+
+.create-pin-header h2 {
+  display: flex;
+  color: #555;
+  padding: 16px;
+  font-size: 24px;
+  letter-spacing: -.3px;
+  line-height: 28px;
+  word-spacing: -2px;
+  font-weight: 600;
+}
+
+.title-box {
+  display: flex;
+  border-top: 1px solid #efefef;
+  padding: 10px;
+  height: 15%;
+}
+
+.title-box h2 {
+  font-size: 16px;
+  word-spacing: -2px;
+  width: 25%;
+  color: #555;
+  font-weight: 400;
+  margin-top: 10px;
+  padding: 16px;
+}
+
+.pin-form-input {
+  width: 75%;
+  border-radius: 4px;
+  cursor: text;
+  background-color: #efefef;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.description-box {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #efefef;
+  height: 15%;
+}
+
+.pin-form-description {
+  font-size: 16px;
+  line-height: 28px;
+  word-spacing: -2px;
+  width: 25%;
+  color: #555;
+  font-weight: 400;
+  padding: 16px;
+}
+
+.pin-form-input {
+  width: 75%;
+  border-radius: 4px;
+  cursor: text;
+  height: 40px;
+  background-color: #efefef;
+  margin-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+}
+
+.pin-form-input input {
+  padding-top: 10px;
+}
+
+.credit-box {
+  display: flex;
+  height: 10%;
+  border-top: 1px solid #efefef;
+  padding: 10px;
+}
+
+.pin-form-credit {
+  font-size: 16px;
+  line-height: 28px;
+  word-spacing: -2px;
+  width: 25%;
+  color: #555;
+  font-weight: 400;
+  padding: 16px;
+}
+
+.upload-buttons {
+  border-top: 1px solid #efefef;
+  font-size: 16px;
+  line-height: 28px;
+  word-spacing: -2px;
+  color: #555;
+  font-weight: 400;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.update-file {
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.create-pin-button {
+  background-color: #efefef;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 4px;
+  color: #b5b5b5;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.create-pin-button-container {
+  margin: 10px;
+}
+
+.create-board-button .plus-icon {
+  margin-top: 0px;
+}

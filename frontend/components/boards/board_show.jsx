@@ -1,15 +1,23 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import PinCreateFormContainer from '../pins/create_pin_container';
+
 
 class BoardShow extends React.Component {
   constructor(props) {
     super(props);
+
+    this.openModal = this.openModal.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchBoard(this.props.match.params.boardId)
     .then( () => this.props.requestSingleUser(this.props.board.user_id));
 
+  }
+
+  openModal() {
+    this.props.openModal(<PinCreateFormContainer/>)
   }
 
   createPin() {
@@ -27,6 +35,8 @@ class BoardShow extends React.Component {
       return "";
     }
   }
+
+
 
 
 
