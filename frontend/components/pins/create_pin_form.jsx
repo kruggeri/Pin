@@ -10,7 +10,6 @@ class PinCreateForm extends React.Component {
       image_url: "",
       board_id: props.board.id,
     };
-    console.log(props);
     this.handleCreate = this.handleCreate.bind(this);
     this.update = this.update.bind(this);
     this.updateFile = this.updateFile.bind(this);

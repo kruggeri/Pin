@@ -6,6 +6,7 @@ class PinShow extends React.Component {
   constructor(props) {
     super(props);
 
+    this.deleteButton = this.deleteButton.bind(this);
   }
 
   componentDidMount() {
@@ -19,12 +20,33 @@ class PinShow extends React.Component {
     }
   }
 
+  deleteButton() {
+    debugger
+
+      if (parseInt(this.props.pin.user_id) === this.props.currentUser.id) {
+        debugger
+        return (
+            <button className="delete-pin" onClick={this.props.removePin(this.props.pin.id)} >
+              <img src={window.images.delete_icon} />
+            </button>
+        );
+      } else {
+        return (
+        <div></div>
+        );
+      };
+
+
+  }
+
+
+
   render() {
     if (this.props.pin) {
       const pin = this.props.pin
       return(
-        <div className="test" onClick={this.props.history.goBack}>
-          <div className="pin-show-page" >
+          <div className="pin-show-page" onClick={this.props.history.goBack} >
+
             <div className="close-up-container">
               <div className="close-up-header">
                 <div className="pin-button-container">
@@ -33,8 +55,11 @@ class PinShow extends React.Component {
                   </button>
                 </div>
 
-              </div>
+                <div>
+                  {this.deleteButton()}
+                </div>
 
+              </div>
               <div className="pin-show-guts">
                 <div className="pin-show-guts-top">
                   <div className="pin-show-image-container">
@@ -70,9 +95,12 @@ class PinShow extends React.Component {
                   </div>
               </div>
             </div>
-          </div>
-        </div>
-        </div>
+
+
+              </div>
+
+            </div>
+
       );
     } else {
       return null;

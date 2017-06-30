@@ -844,7 +844,7 @@ button:hover {
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 
 .pin-show-guts {
@@ -1064,4 +1064,13 @@ button:hover {
 
 .create-board-button .plus-icon {
   margin-top: 0px;
+}
+
+.delete-pin img {
+  height: 50px;
+  width: 50px;
+}
+
+delete-pin {
+  z-index: 5000;
 }

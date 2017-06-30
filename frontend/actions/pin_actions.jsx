@@ -2,6 +2,7 @@ import * as APIUtil from '../util/pin_api_util';
 
 export const RECEIVE_ALL_PINS = "RECEIVE_ALL_PINS";
 export const RECEIVE_SINGLE_PIN = "RECEIVE_SINGLE_PIN";
+export const REMOVE_PIN = "REMOVE_PIN";
 
 export const receiveAllPins = (pins) => ({
   type: RECEIVE_ALL_PINS,
@@ -14,10 +15,14 @@ export const receiveSinglePin = (pin) => {
   pin: pin, }
 };
 
-export const removePin = id => ({
-  type: REMOVE_PIN,
-  id
-})
+export const removePin = id => {
+  debugger
+  return {
+    type: REMOVE_PIN,
+    id
+  }
+
+}
 
 
 
