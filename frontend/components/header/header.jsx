@@ -36,7 +36,7 @@ const Header = ({logout, currentUser}) => {
       </div>
 
     </div>
-      <Route path="/users/:userId" component={ProfileContainer} />
+
     </div>
   );
 }

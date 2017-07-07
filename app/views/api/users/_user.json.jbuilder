@@ -11,3 +11,29 @@ json.avatar_url asset_path(user.avatar.url)
 json.boards user.boards do |board|
   json.partial! 'api/boards/board.json.jbuilder', board: board
 end
+
+json.followers do
+  user.followers.each do |follower|
+    json.set! follower.id do
+      json.extract! follower, :id, :username
+      json.avatar_url asset_path(follower.avatar.url)
+    end
+  end
+end
+
+json.followings do
+  user.followings.each do |following|
+    json.set! following.id do
+      json.extract! following, :id, :username
+      json.avatar_url asset_path(following.avatar.url)
+    end
+  end
+end
+
+if current_user
+  if user.followers.exists?(id: current_user.id)
+    json.followed true
+  else
+    json.followed false
+  end
+end

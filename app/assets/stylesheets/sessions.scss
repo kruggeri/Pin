@@ -89,10 +89,15 @@ body {
   background: white;
   display: flex;
   width: 400px;
-  height: 550px;
+  height: 600px;
   border-radius: 10px;
   justify-content: center;
   margin-top: 135px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
 }
 
  h3 {
@@ -163,7 +168,7 @@ body {
   outline: none;
 }
 
-.submit-button {
+.submit-button, .demo-button {
   background-color: black;
   border: none;
   color: white;
@@ -179,10 +184,10 @@ body {
   width: 235px;
 }
 
-.demo-button {
-  text-decoration: none;
-  font-family: 'Helvetica Neue';
-}
+// .demo-button {
+//   text-decoration: none;
+//   font-family: 'Helvetica Neue';
+// }
 
 .demo-button:hover {
   cursor: pointer;

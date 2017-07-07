@@ -40,9 +40,13 @@ class SessionForm extends React.Component {
   }
 
   demoButton() {
-    return (
-      <input className="demo-button" type="button" onClick={this.handleDemo} value="Demo" />
-    );
+    if (this.props.formType === 'login') {
+      return (
+        <input className="demo-button" type="button" onClick={this.handleDemo} value="Demo" />
+      );
+    } else {
+      return null; 
+    }
   }
 
 
@@ -148,11 +152,13 @@ class SessionForm extends React.Component {
                   />
               </div>
               <input type="submit" value="Submit" className="submit-button" />
+              {this.demoButton()}
             </div>
             <div className="alt-prompt">
-              {this.altPrompt()}
+                  {this.altPrompt()}
+
             </div>
-            {this.demoButton()}
+
           </form>
 
 

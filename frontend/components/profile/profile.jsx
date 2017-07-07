@@ -4,6 +4,8 @@ import { requestSingleUser, receiveSingleUser } from '../../actions/profile_acti
 import BoardIndexContainer from '../boards/board_index_container';
 import { Link } from 'react-router-dom';
 import BoardCreateFormContainer from '../boards/board_create_form_container';
+import FollowContainer from '../follows/follow_container';
+
 
 class Profile extends Component {
   constructor(props) {
@@ -12,7 +14,6 @@ class Profile extends Component {
    this.profileHeader = this.profileHeader.bind(this);
    this.createBoardButton = this.createBoardButton.bind(this);
    this.openModal = this.openModal.bind(this);
-
  }
   componentDidMount() {
     this.props.requestSingleUser(this.props.match.params.userId);
@@ -35,7 +36,7 @@ class Profile extends Component {
       );
     } else {
       return (
-        <input className="follow-button" type="button" onClick="" value="Follow" />
+          <FollowContainer></FollowContainer>
       );
     }
   }
@@ -66,7 +67,12 @@ class Profile extends Component {
 
   getBoardPins(board, idx) {
     return (board.pins[idx] ? board.pins[idx].image_source : window.images.default_pin)
+  }
 
+  getFollows(follows) {
+    return(
+      Object.keys(follows).length
+    )
   }
 
   render() {
@@ -87,16 +93,24 @@ class Profile extends Component {
 
               <div className="profile-info-right">
                 <div className="followers-links">
-                  <div className="followers">Followers</div>
+                  <div className="followers">
+                    <Link to={`/users/${this.props.user.id}/followers`} className="user-profile-link">
+                      {this.getFollows(this.props.user.followers)} Followers
+                    </Link>
+                  </div>
                   &nbsp; &nbsp;
-                  <div className="following">Following</div>
+                  <div className="following">
+                    <Link to={`/users/${this.props.user.id}/followings`} className="user-profile-link">
+                      {this.getFollows(this.props.user.followings)} Following
+                    </Link>
+                  </div>
                 </div>
 
                 <div className="location">
                   {this.props.user.location}
                 </div>
                 <div className="website">
-                  {this.props.user.personal_site_url}
+                  <a href={this.props.user.personal_site_url}>{this.props.user.personal_site_url}</a>
                 </div>
                 <div className="about">
                   {this.props.user.about}
@@ -112,11 +126,15 @@ class Profile extends Component {
 
             <div className="profile-buttons">
               <div className="boards-button">
-                <input className="boards-button" type="button" onClick="" value="Boards" />
+                  <Link to={`/users/${this.props.user.id}`} className="user-profile-link">
+                    {this.props.user.boards.length} Boards
+                   </Link>
               </div>
 
               <div className="pins-button">
-                <input className="pins-button" type="button" onClick="" value="Pins" />
+                <Link to={`/users/${this.props.user.id}/pins`} className="user-profile-link">
+                  {this.props.user.pins.length} Pins
+                </Link>
               </div>
 
             </div>

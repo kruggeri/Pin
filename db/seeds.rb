@@ -20,7 +20,7 @@ User.create!(
   email: "k.ruggeri8@gmail.com",
   about: "Artist/Computer Programmer/Aries",
   location: "New York, NY",
-  personal_site_url: "kate-ruggeri.com",
+  personal_site_url: "https://github.com/kruggeri",
   avatar: File.open('app/assets/images/kate_avatar.jpg')
   )
 
