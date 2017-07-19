@@ -9,6 +9,8 @@
 User.destroy_all
 Board.destroy_all
 Pin.destroy_all
+Follow.destroy_all
+
 
 ## USERS ##
 
@@ -84,6 +86,63 @@ User.create!(
   personal_site_url: "brooks-site.com",
   avatar: File.open('app/assets/images/brook_avatar.png')
 )
+
+###
+
+
+## FOLLOWS ##
+
+Follow.create!(
+  follower_id: User.find_by(username: "Kate").id,
+  following_id: User.find_by(username: "ladyb").id
+)
+
+Follow.create!(
+  follower_id: User.find_by(username: "ladyb").id,
+  following_id: User.find_by(username: "Kate").id
+)
+
+Follow.create!(
+  follower_id: User.find_by(username: "Kate").id,
+  following_id: User.find_by(username: "mac").id
+)
+
+Follow.create!(
+  follower_id:  User.find_by(username: "mac").id,
+  following_id: User.find_by(username: "Kate").id
+)
+
+Follow.create!(
+  follower_id: User.find_by(username: "Kate").id,
+  following_id: User.find_by(username: "Lauren").id
+)
+
+Follow.create!(
+  follower_id: User.find_by(username: "Lauren").id,
+  following_id: User.find_by(username: "Kate").id
+)
+
+Follow.create!(
+  follower_id: User.find_by(username: "Kate").id,
+  following_id: User.find_by(username: "cindy").id
+)
+
+Follow.create!(
+  follower_id: User.find_by(username: "cindy").id,
+  following_id: User.find_by(username: "Kate").id
+)
+
+Follow.create!(
+  follower_id: User.find_by(username: "brook").id,
+  following_id: User.find_by(username: "Kate").id
+)
+
+Follow.create!(
+  follower_id: User.find_by(username: "Kate").id,
+  following_id: User.find_by(username: "brook").id
+)
+
+
 
 ###
 

@@ -15,7 +15,7 @@ end
 json.followers do
   user.followers.each do |follower|
     json.set! follower.id do
-      json.extract! follower, :id, :username
+      json.extract! follower, :id, :username, :boards, :pins
       json.avatar_url asset_path(follower.avatar.url)
     end
   end
@@ -24,8 +24,16 @@ end
 json.followings do
   user.followings.each do |following|
     json.set! following.id do
-      json.extract! following, :id, :username
+
+      json.extract! following, :id, :username, :boards
       json.avatar_url asset_path(following.avatar.url)
+      json.pins do
+        following.pins.each do |pin|
+          json.set! pin.id do
+            json.partial! 'api/pins/pin.json.jbuilder', pin: pin
+          end
+        end
+      end
     end
   end
 end
