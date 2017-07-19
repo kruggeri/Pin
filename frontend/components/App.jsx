@@ -29,6 +29,8 @@ const App = () => (
     <ProtectedRoute exact path="/users/:userId" component={ProfileContainer} />
     <ProtectedRoute exact path="/users/:userId/followings" component={ FollowsContainer } />
     <ProtectedRoute exact path="/users/:userId/followers" component={ FollowsContainer } />
+    <ProtectedRoute exact path="/home" component={ DiscoveryContainer } />
+
   </Switch>
 
 

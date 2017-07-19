@@ -400,7 +400,7 @@ body {
   padding: 10px;
   text-align: center;
   font-weight: bold;
-  width: 80px;
+  width: 100px;
 
 }
 
@@ -1078,4 +1078,74 @@ button:hover {
 
 delete-pin {
   z-index: 5000;
+}
+
+.follows-thumbnail {
+  border-radius: 50%;
+  width: 230px;
+  height: 230px;
+  margin-bottom: 20px;
+}
+
+.follows-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.follows-header-box {
+  display: flex;
+  min-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 78px;
+  flex-direction: row;
+  margin-bottom: 100px;
+}
+
+.user-follows-thumbnail {
+  border-radius: 50%;
+  width: 170px;
+  height: 170px;
+}
+
+.follows-numbers {
+  width: 50%;
+}
+
+.follows-numbers-num {
+  font-size: 36px;
+  letter-spacing: -1.25px;
+  line-height: 42px;
+  word-spacing: -2.25px;
+  font-weight: bold;
+  color: #555;
+}
+
+.follows-name {
+  text-align: left;
+  color: #b5b5b5;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.follows-list {
+  height: 3700px;
+  width: 1040px;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+}
+
+.follows-item {
+  display: flex;
+  flex-direction: column;
+  margin: 30px; 
+}
+
+.follows-item-username {
+  width: 230px;
+  text-align: center;
+  color: #555;
+  font-size: 18px;
+  font-weight: bold;
 }

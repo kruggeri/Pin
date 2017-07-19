@@ -1,4 +1,4 @@
-class FollowsController < Api::ApplicationController
+class Api::FollowsController < ApplicationController
 
   def create
     @follow = Follow.new(follow_params)
@@ -25,5 +25,4 @@ class FollowsController < Api::ApplicationController
   def follow_params
     params.require(:follow).permit(:follower_id, :following_id)
   end
-end
 end
