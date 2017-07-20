@@ -306,6 +306,7 @@ body {
   margin-top: 50px;
   color: #b5b5b5;
   height: 40px;
+  justify-content: center;
 }
 
 .profile-container {
@@ -314,6 +315,7 @@ body {
   justify-content: center;
   margin-top: 100px;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .profile-box-large {
@@ -322,6 +324,7 @@ body {
 
 .profile-box {
   display: flex;
+  justify-content: center;
 }
 
 .profile-info {
@@ -668,6 +671,7 @@ body {
 
 .profile-buttons {
   display: flex;
+  justify-content: center;
 }
 
 .modal-root {
@@ -1133,6 +1137,7 @@ delete-pin {
   position: relative;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
 }
 
 .follows-item {
