@@ -567,12 +567,14 @@ body {
 .board-pin-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .pins {
   display: flex;
   margin-left: 2%;
   margin-right: 2%;
+  justify-content: center;
 }
 
 .pin-description {
