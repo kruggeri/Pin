@@ -22,7 +22,7 @@ class Follow extends React.Component {
     let currentUserId = this.props.currentUser.id;
     let userId = this.props.user.id;
     let follow = {follower_id: currentUserId, following_id: userId};
-    debugger; 
+    ; 
     this.props.deleteFollow(follow);
   }
 

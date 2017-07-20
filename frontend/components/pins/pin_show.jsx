@@ -21,10 +21,9 @@ class PinShow extends React.Component {
   }
 
   deleteButton() {
-    debugger
 
       if (parseInt(this.props.pin.user_id) === this.props.currentUser.id) {
-        debugger
+
         return (
             <button className="delete-pin" onClick={this.props.removePin(this.props.pin.id)} >
               <img src={window.images.delete_icon} />
@@ -40,12 +39,19 @@ class PinShow extends React.Component {
   }
 
 
+goBack(e) {
+  e.preventDefault();
+  if (e.target.getAttribute("class") === "pin-show-page"){
+    this.props.history.goBack();
+  };
+
+}
 
   render() {
     if (this.props.pin) {
       const pin = this.props.pin
       return(
-          <div className="pin-show-page" onClick={this.props.history.goBack} >
+          <div className="pin-show-page" onClick={this.goBack.bind(this)}  >
 
             <div className="close-up-container">
               <div className="close-up-header">
