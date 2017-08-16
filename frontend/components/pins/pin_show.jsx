@@ -23,9 +23,10 @@ class PinShow extends React.Component {
   deleteButton() {
 
       if (parseInt(this.props.pin.user_id) === this.props.currentUser.id) {
+        console.log(this.props);
 
         return (
-            <button className="delete-pin" onClick={this.props.removePin(this.props.pin.id)} >
+            <button className="delete-pin" onClick={ () => this.props.removePin(this.props.pinId)} >
               <img src={window.images.delete_icon} />
             </button>
         );

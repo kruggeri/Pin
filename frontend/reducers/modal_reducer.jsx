@@ -1,6 +1,7 @@
 import { merge } from 'lodash';
 import { OPEN, CLOSE, RECEIVE_COMPONENT } from '../actions/modal_actions';
 
+// TODO: component is empty string, not null?
 const defaultState = {
   isOpen: false,
   component: ""
@@ -14,7 +15,7 @@ const ModalReducer = (state = defaultState, action) => {
     case CLOSE:
       return merge({}, state, {component: "", isOpen: false});
     case RECEIVE_COMPONENT:
-      return merge({}, state, { component });
+      return merge({}, state, {component});
     default:
       return state;
   }

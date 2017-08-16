@@ -24,13 +24,12 @@ class Pin < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :user,
-  primary_key: :id,
-  foreign_key: :user_id,
-  class_name: "User"
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: "User"
 
   belongs_to :board,
-  primary_key: :id,
-  foreign_key: :board_id,
-  class_name: "Board"
-
+    primary_key: :id,
+    foreign_key: :board_id,
+    class_name: "Board"
 end

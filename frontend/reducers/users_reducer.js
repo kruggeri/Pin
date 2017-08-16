@@ -1,8 +1,6 @@
-import { merge } from 'lodash';
+import { merge, concat, omit } from 'lodash';
 
-import {
-  RECEIVE_SINGLE_USER,
-} from '../actions/profile_actions';
+import { RECEIVE_SINGLE_USER } from '../actions/profile_actions';
 import { RECEIVE_BOARD } from '../actions/board_actions';
 import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/follow_actions';
 
@@ -18,25 +16,23 @@ const defaultState = {
   followings: {},
 };
 
-
 const UsersReducer = (state = defaultState, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_SINGLE_USER:
-      let newState = merge({}, defaultState, action.user);
-      return newState;
+      return merge({}, defaultState, action.user);
     case RECEIVE_BOARD:
-      newState = merge({}, defaultState);
-      newState.boards.push(action.board);
-      return newState;
+      return merge({}, state, {boards: concat(state.boards, [action.board])});
     case RECEIVE_FOLLOW:
-      newState = merge({}, state, { followed: true } );
-      newState.followers[action.user.user_id] = action.user;
-      return newState;
+      return merge({}, state, {
+        followed: true,
+        followers: merge({}, state.followers, {[action.user.user_id]: action.user})
+      });
     case REMOVE_FOLLOW:
-      newState = merge({}, state, { followed: false } );
-      delete newState.followers[action.follow.follower_id];
-      return newState;
+      return merge({}, state, {
+        followed: false,
+        followers: omit(state.followers, action.user.user_id)
+      });
     default:
       return state;
   }

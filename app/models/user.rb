@@ -19,7 +19,6 @@
 #
 
 class User < ActiveRecord::Base
-
   attr_reader :password
 
   validates :username, :password_digest, :session_token, presence: true
@@ -58,7 +57,7 @@ class User < ActiveRecord::Base
     user.is_password?(password) ? user : nil
   end
 
-  def password= (password)
+  def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
   end
@@ -74,9 +73,8 @@ class User < ActiveRecord::Base
   end
 
   private
-
+  
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
-
 end

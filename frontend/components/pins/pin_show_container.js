@@ -20,7 +20,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => ({
   requestSinglePin: (pinId) => dispatch(requestSinglePin(pinId)),
   requestSingleUser: (userId) => dispatch(requestSingleUser(userId)),
-  removePin: (pinId) => dispatch(removePin(pinId)),
+  removePin: (pinId) => dispatch(removePin(pinId))
 });
 
 export default connect(

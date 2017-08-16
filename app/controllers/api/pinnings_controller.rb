@@ -1,9 +1,10 @@
+# TODO: pinning controller is not in use 
 class Api::PinningsController < ApplicationController
-
   def create
     @pinning = Pinning.new(pinning_params)
     if @pinning.save
       @pin = @pinning.pin
+      # TODO: make proper view for showing a pinning
       render 'api/pins/show.json.jbuilder'
     else
       render json: @pinning.errors.full_messages, status: 400
@@ -15,6 +16,7 @@ class Api::PinningsController < ApplicationController
     board = @pinning.board
     if @pinning.destroy
       @board = board
+      # TODO: make proper view for showing a pinning
       render 'api/boards/show.json.jbuilder'
     else
       render json: @pinning.errors.full_messages, status: 422
@@ -26,6 +28,4 @@ class Api::PinningsController < ApplicationController
   def pinning_params
     params.require(:pinning).permit(:board_id, :pin_id)
   end
-
-
 end

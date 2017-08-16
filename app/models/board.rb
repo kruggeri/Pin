@@ -14,13 +14,12 @@ class Board < ActiveRecord::Base
   validates :title, :user, presence: true
 
   belongs_to :user,
-  primary_key: :id,
-  foreign_key: :user_id,
-  class_name: "User"
-
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: "User"
 
   has_many :pins,
-  primary_key: :id,
-  foreign_key: :board_id,
-  class_name: "Pin"
+    primary_key: :id,
+    foreign_key: :board_id,
+    class_name: "Pin"
 end

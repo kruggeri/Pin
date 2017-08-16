@@ -1,5 +1,4 @@
 class Api::PinsController < ApplicationController
-
   def index
     @pins = Pin.all
     render :index
@@ -20,6 +19,7 @@ class Api::PinsController < ApplicationController
     render :show
   end
 
+  # TODO: not implemented
   def update
   end
 
@@ -35,6 +35,8 @@ class Api::PinsController < ApplicationController
   private
 
   def pin_params
-    params.require(:pin).permit(:title, :image, :description, :image_url, :board_id)
+    params.require(:pin).permit(
+      :title, :image, :description, :image_url, :board_id
+    )
   end
 end

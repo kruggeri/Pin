@@ -1,21 +1,20 @@
 <script type="text/javascript">
 
-window.images = {
-  pin_icon_small: "<%=image_path('pin_icon_small.jpg')%>",
-  user_icon: "<%=image_path('user_icon.png')%>",
-  default_pin: "<%=image_path('default_pin.jpg')%>",
-  plus: "<%=image_path('plus.png')%>",
-  pin: "<%=image_path('pinit_icon.png')%>",
-  delete_icon: "<%=image_path('delete_icon.png')%>"
-}
+  window.images = {
+    pin_icon_small: "<%= image_path('pin_icon_small.jpg') %>",
+    user_icon: "<%= image_path('user_icon.png') %>",
+    default_pin: "<%= image_path('default_pin.jpg') %>",
+    plus: "<%= image_path('plus.png') %>",
+    pin: "<%= image_path('pinit_icon.png') %>",
+    delete_icon: "<%= image_path('delete_icon.png') %>"
+  };
 
   <% if logged_in? %>
     window.currentUser = <%= render(
       "api/users/user.json.jbuilder",
       user: current_user
-    ).html_safe %>
-  <% end  %>
+    ).html_safe %>;
+  <% end %>
 </script>
-
 
 <main id="root"> </main>
