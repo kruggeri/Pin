@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
-import { fetchBoard, createBoard } from '../../actions/board_actions';
+import { createBoard, fetchBoard } from '../../actions/board_actions';
 import BoardsIndexItem from './boards_index_item';
 
 const mapStateToProps = (state) => {
   return ({
     boards: state.user.boards,
     currentUser: state.session.currentUser,
-    user: state.user
+    user: state.user,
   });
 };
 
 const mapDispatchToProps = dispatch => ({
+  createBoard: (board) => dispatch(createBoard(board)),
   fetchBoard: (id) => dispatch(fetchBoard(id)),
-  createBoard: (board) => dispatch(createBoard(board))
 });
 
 export default connect(

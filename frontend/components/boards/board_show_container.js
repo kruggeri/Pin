@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import BoardShow from './board_show';
-import { fetchBoard, deleteBoard, receiveBoard } from '../../actions/board_actions';
-import { requestSingleUser } from '../../actions/profile_actions';
+import { fetchBoard, deleteBoard } from '../../actions/board_actions';
 import { open } from '../../actions/modal_actions';
+import { requestSingleUser } from '../../actions/profile_actions';
+import BoardShow from './board_show';
 
 const mapStateToProps = (state) => {
   return ({
@@ -23,4 +23,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-) (BoardShow);
+)(BoardShow);

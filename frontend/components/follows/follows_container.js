@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
-import { selectUserData } from '../../reducers/selectors';
+import { values } from 'lodash';
 import Follows from './follows';
 
 const mapStateToProps = (state) => {
-  return ({
-    currentUser: state.session.currentUser, 
+  return {
+    currentUser: state.session.currentUser,
     user: state.user,
-    followers: selectUserData(state.user.followers),
-    followings: selectUserData(state.user.followings)
-  });
+    followers: values(state.user.followers),
+    followings: values(state.user.followings)
+  };
 };
 
 export default connect(

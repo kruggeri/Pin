@@ -1,9 +1,8 @@
 import { connect } from "react-redux";
 import { createFollow, deleteFollow } from "../../actions/follow_actions";
-
 import Follow from './follow';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,
     user: state.user

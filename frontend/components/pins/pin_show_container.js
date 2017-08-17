@@ -1,20 +1,16 @@
-
 import { connect } from 'react-redux';
-import PinShow from './pin_show';
-import { requestAllPins, createPin, receiveAllPins } from '../../actions/pin_actions';
 import { requestSinglePin, removePin } from '../../actions/pin_actions';
 import { requestSingleUser } from '../../actions/profile_actions';
-
-
+import PinShow from './pin_show';
 
 const mapStateToProps = (state, ownProps) => {
   const pinId = ownProps.match.params.id;
-  return ({
+  return {
     currentUser: state.session.currentUser,
     user: state.user,
     pinId: pinId,
     pin: state.pins[pinId],
-  });
+  };
 };
 
 const mapDispatchToProps = (dispatch) => ({
