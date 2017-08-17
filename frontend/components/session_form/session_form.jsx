@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -15,6 +14,8 @@ class SessionForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
+      // TODO: what is this supposed to do?
+      console.log("SessionForm#componentWillReceiveProps called!")
       this.props.history.push('/');
     }
   }
@@ -33,7 +34,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     this.setState(
       { username: 'Kate', password: '123456' },
-      () => this.props.processForm(this.state).then( (userAction) => {
+      () => this.props.processForm(this.state).then((userAction) => {
         this.props.history.push(`/users/${userAction.currentUser.id}`);
       })
     );
@@ -45,17 +46,15 @@ class SessionForm extends React.Component {
         <input className="demo-button" type="button" onClick={this.handleDemo} value="Demo" />
       );
     } else {
-      return null; 
+      return null;
     }
   }
-
-
 
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
     this.props.processForm(user)
-      .then( (userAction) => {
+      .then((userAction) => {
         this.props.history.push(`/users/${userAction.currentUser.id}`);
       });
   }
@@ -80,92 +79,96 @@ class SessionForm extends React.Component {
           &nbsp; &nbsp;
           <Link to="/signup">Sign Up</Link>
         </div>
-        )
-      } else {
-          return (
-            <div className="altprompt-text">
-              <div>Already a member?  </div>
-              &nbsp; &nbsp;
-              <Link to="/login">Log in</Link>
-            </div>
-          )
-        }
-      }
+      );
+    } else {
+      return (
+        <div className="altprompt-text">
+          <div>Already a member?  </div>
+          &nbsp; &nbsp;
+          <Link to="/login">Log in</Link>
+        </div>
+      );
+    }
+  }
 
   renderErrors() {
     return (
       <ul className="errors">
         {this.props.errors.map((error, i) => (
-        <li key={`error-${i}`}>
-          {error}
-        </li>
+          <li key={`error-${i}`}>
+            {error}
+          </li>
         ))}
       </ul>
     );
   }
 
+  loginFormBody() {
+    return (
+      <div className="login-form">
+        <div className="form-username">
+          <input
+            className="login-username"
+            type="text"
+            placeholder="Username"
+            value={this.state.username}
+            onChange={this.update('username')}
+          />
+        </div>
+
+        <div className="form-password">
+          <input
+            className="login-password"
+            type="password"
+            placeholder="Password"
+            value={this.state.password}
+            onChange={this.update('password')}
+            />
+        </div>
+
+        <input type="submit" value="Submit" className="submit-button" />
+        {this.demoButton()}
+      </div>
+    );
+  }
+
+  renderIcon() {
+    return (
+      <div className="icon">
+        <div className="icon-pic">
+          <img src={window.images.pin_icon_small} />
+        </div>
+      </div>
+    );
+  }
+
   render() {
     let errors;
-    if (this.props.errors.length === 0) {
+    if (this.props.errors === undefined) {
       errors = "";
-    } else if (this.props.errors !== undefined) {
-      errors = this.renderErrors();
+    } else if (this.props.errors.length === 0) {
+      errors = "";
     } else {
-      errors = "";
+      errors = this.renderErrors();
     }
 
     return (
       <div className="login-body">
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
-            <div className="icon">
-              <div className="icon-pic">
-                <img src={window.images.pin_icon_small} />
-              </div>
-
-            </div>
+            {this.renderIcon()}
             <h3>Welcome to Pin</h3>
             <br/>
-            <div className="greet">
-              {this.greet()}
-            </div>
+            <div className="greet">{this.greet()}</div>
 
             {errors}
+            {this.loginFormBody()}
 
-            <div className="login-form">
-              <div className="form-username">
-                <input
-                  className="login-username"
-                  type="text"
-                  placeholder="Username"
-                  value={this.state.username}
-                  onChange={this.update('username')}
-                />
-              </div>
-              <div className="form-password">
-                <input
-                  className="login-password"
-                  type="password"
-                  placeholder="Password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  />
-              </div>
-              <input type="submit" value="Submit" className="submit-button" />
-              {this.demoButton()}
-            </div>
-            <div className="alt-prompt">
-                  {this.altPrompt()}
-
-            </div>
-
+            <div className="alt-prompt">{this.altPrompt()}</div>
           </form>
-
-
         </div>
       </div>
     );
-
   }
 }
 
