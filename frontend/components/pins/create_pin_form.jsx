@@ -102,6 +102,8 @@ class PinCreateForm extends React.Component {
   }
 
   render() {
+    // TODO: add image_url, with CSS to show uploaded image
+    // <img src={this.state.imageUrl} />
     return (
       <form className="create-pin-form">
         <Header closeModal={this.props.closeModal} />
@@ -109,7 +111,6 @@ class PinCreateForm extends React.Component {
         <DescriptionInput onChange={this.update('description')} />
         <CreditInput onChange={this.update('image_url')} />
         <UploadButtons onChange={this.updateFile} onClick={this.handleCreate} />
-        <img src={this.state.imageUrl} />
       </form>
     );
   }

@@ -47,7 +47,7 @@ User.create!(
   about: "Photographer",
   location: "Brooklyn, NY",
   personal_site_url: "macs-site.com",
-  avatar: File.open('app/assets/images/mac_avatar2.png')
+  avatar: File.open('app/assets/images/mac_avatar2.jpg')
 
 )
 
@@ -499,7 +499,7 @@ Pin.create!(
     title: "Selva Aparicio",
     image_url: "www.selvaaparicio.net/",
     user_id: User.find_by(username: "Kate").id,
-    image: File.open('app/assets/images/wares/selva.png'),
+    image: File.open('app/assets/images/wares/selva_copy.jpg'),
     board_id: Board.find_by(title: "Objects/Wares").id
   )
 
@@ -761,7 +761,7 @@ Pin.create!(
     title: "Adam Pape",
     image_url: "http://www.poppyandpima.com/",
     user_id: User.find_by(username: "ladyb").id,
-    image: File.open('app/assets/images/beth_board1/poppy3.jpeg'),
+    image: File.open('app/assets/images/beth_board1/poppy3.jpg'),
     board_id: Board.find_by(title: "Current Mood").id
   )
 
@@ -1049,7 +1049,7 @@ Pin.create!(
     title: "Cole Don Kelley",
     image_url: "http://www.coledonkelley.com/",
     user_id: User.find_by(username: "Lauren").id,
-    image: File.open('app/assets/images/lauren_board1/cole.png'),
+    image: File.open('app/assets/images/lauren_board1/cole_copy.png'),
     board_id: Board.find_by(title: "Upcoming Show....?").id
   )
 
@@ -1131,7 +1131,7 @@ Pin.create!(
   title: "Cole Don Kelley",
   image_url: "http://www.coledonkelley.com/",
   user_id: User.find_by(username: "Lauren").id,
-  image: File.open('app/assets/images/lauren_board2/cole.png'),
+  image: File.open('app/assets/images/lauren_board2/cole_copy.jpg'),
   board_id: Board.find_by(title: "Far Out").id
 )
 
@@ -1139,7 +1139,7 @@ Pin.create!(
   title: "Cole Don Kelley",
   image_url: "http://www.coledonkelley.com/",
   user_id: User.find_by(username: "Lauren").id,
-  image: File.open('app/assets/images/lauren_board2/cole2.png'),
+  image: File.open('app/assets/images/lauren_board2/cole2_copy.png'),
   board_id: Board.find_by(title: "Far Out").id
 )
 
@@ -1437,7 +1437,7 @@ Pin.create!(
   title: "Poppy & Pima",
   image_url: "http://www.poppyandpima.com/",
   user_id: User.find_by(username: "brook").id,
-  image: File.open('app/assets/images/brook_board1/poppy2.jpeg'),
+  image: File.open('app/assets/images/brook_board1/poppy2.jpg'),
   board_id: Board.find_by(title: "Collection 1.").id
 )
 
@@ -1509,7 +1509,7 @@ Pin.create!(
   title: "Poppy & Pima",
   image_url: "http://www.poppyandpima.com/",
   user_id: User.find_by(username: "brook").id,
-  image: File.open('app/assets/images/brook_board2/poppy.jpeg'),
+  image: File.open('app/assets/images/brook_board2/poppy.jpg'),
   board_id: Board.find_by(title: "Collection 2.").id
 )
 
