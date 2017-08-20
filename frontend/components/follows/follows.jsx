@@ -39,7 +39,7 @@ const Follows = ({followers, followings, location, user}) => {
       <FollowsHeaderBox follows={follows} user={user} />
 
       <ul className="follows-list">
-        {follows.map((follow) => <FollowLink follow={follow} key={follow.id} />}
+        {follows.map((follow) => <FollowLink follow={follow} key={follow.id} />)}
       </ul>
     </div>
   );
