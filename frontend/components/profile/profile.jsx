@@ -1,3 +1,4 @@
+import { values } from 'lodash';
 import React, { Component } from 'react';
 import { Link, Route } from 'react-router-dom';
 import { requestSingleUser, receiveSingleUser } from '../../actions/profile_actions';
@@ -60,7 +61,8 @@ class Profile extends Component {
   }
 
   getPinImage(board, idx) {
-    return (board.pins[idx] ? board.pins[idx].image_source : window.images.default_pin)
+    const boardPins = values(board.pins);
+    return (boardPins[idx] ? boardPins[idx].image_source : window.images.default_pin)
   }
 
   getNumFollows(follows) {

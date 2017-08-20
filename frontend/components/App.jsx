@@ -24,9 +24,11 @@ const App = () => (
     <AuthRoute exact path="/login" component={ SessionFormContainer } />
     <ProtectedRoute exact path="/pins/:id" component={ PinShowContainer } />
     <AuthRoute exact path="/signup" component={ SessionFormContainer } />
-    <ProtectedRoute exact path="/users/:userId" component={ ProfileContainer } />
-    <ProtectedRoute exact path="/users/:userId/followings" component={ FollowsContainer } />
-    <ProtectedRoute exact path="/users/:userId/followers" component={ FollowsContainer } />
+    <Switch>
+      <ProtectedRoute exact path="/users/:userId" component={ ProfileContainer } />
+      <ProtectedRoute exact path="/users/:userId/followings" component={ FollowsContainer } />
+      <ProtectedRoute exact path="/users/:userId/followers" component={ FollowsContainer } />
+    </Switch>
     <ModalContainer />
   </div>
 );

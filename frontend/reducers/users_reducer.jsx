@@ -26,13 +26,12 @@ const UsersReducer = (state = defaultState, action) => {
     case RECEIVE_FOLLOW:
       return merge({}, state, {
         followed: true,
-        followers: merge({}, state.followers, {[action.user.user_id]: action.user})
+        followers: merge({}, state.followers, {[action.user.id]: action.user})
       });
     case REMOVE_FOLLOW:
-      return merge({}, state, {
-        followed: false,
-        followers: omit(state.followers, action.user.user_id)
-      });
+      return merge(omit(
+        state, [['followers', action.userId]]
+      ), {followed: false});
     default:
       return state;
   }

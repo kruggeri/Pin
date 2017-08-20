@@ -105,7 +105,6 @@ class BoardShow extends React.Component {
       return <div></div>
     }
     const {pins} = this.props;
-
     return (
       <section className="board-show-container">
         {this.boardHeader()}

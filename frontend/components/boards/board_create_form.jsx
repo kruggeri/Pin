@@ -33,9 +33,9 @@ const BoardFormDescriptionInput = ({onChange}) => (
   </label>
 );
 
-const createBoardButton = ({onClick}) => (
+const CreateBoardButton = () => (
   <div className="create-board-button-container">
-    <button className="create-board-button" type="submit" onClick={onClick}>
+    <button className="create-board-button" type="submit">
       <div>Create</div>
     </button>
   </div>
@@ -63,11 +63,11 @@ class BoardCreateForm extends React.Component {
 
   render() {
     return (
-      <form className="board-form">
+      <form className="board-form" onSubmit={this.handleSubmit}>
         <BoardFormHeader closeModal={this.props.closeModal} />
         <BoardFormTitleInput onChange={this.update("title")} />
         <BoardFormDescriptionInput onChange={this.update("description")} />
-        <CreateBoardButton onClick={this.handleSubmit} />
+        <CreateBoardButton />
       </form>
     );
   }

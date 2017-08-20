@@ -1,3 +1,4 @@
+import { values } from 'lodash';
 import { connect } from 'react-redux';
 import { fetchBoard, deleteBoard } from '../../actions/board_actions';
 import { open } from '../../actions/modal_actions';
@@ -9,7 +10,7 @@ const mapStateToProps = (state) => {
     currentUser: state.session.currentUser,
     user: state.user,
     board: state.board,
-    pins: state.board.pins,
+    pins: values(state.board.pins),
   });
 };
 

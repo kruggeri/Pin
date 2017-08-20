@@ -8,21 +8,21 @@ export const receiveFollow = (user) => ({
   user: user
 });
 
-export const removeFollow = (follow) => ({
+export const removeFollow = (userId) => ({
   type: REMOVE_FOLLOW,
-  follow: follow
+  userId: userId,
 });
 
 export const createFollow = (follow) => (dispatch) => {
   return (
     APIUtil.createFollow(follow)
-      .then( user => dispatch(receiveFollow(user)))
+      .then(user => dispatch(receiveFollow(user)))
   );
 };
 
 export const deleteFollow = (follow) => (dispatch) => {
   return (
     APIUtil.deleteFollow(follow)
-      .then(removedFollow => dispatch(removeFollow(removedFollow)))
+      .then(follow => dispatch(removeFollow(follow.follower_id)))
   );
 };

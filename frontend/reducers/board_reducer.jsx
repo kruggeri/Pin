@@ -6,7 +6,7 @@ const defaultState = {
   id: 0,
   title: "",
   description: "",
-  pins: []
+  pins: {},
 };
 
 // TODO: feels weird to have a default parameter come first?
@@ -18,9 +18,13 @@ const BoardReducer = (state = defaultState, action) => {
     case DELETE_BOARD:
       return defaultState;
     case RECEIVE_SINGLE_PIN:
-      return merge({}, state, {pins: concat(state.pins, [action.pin])});
+      return merge({}, state, {
+        pins: merge({}, state.pins, {[action.pin.id]: action.pin})
+      });
     case REMOVE_PIN:
-      return merge({}, state, {pins: reject(state.pins, {id: action.id})});
+      return merge({}, state, {
+        pins: omit(state.pins, action.pin.id)
+      });
     default:
       return state;
   }

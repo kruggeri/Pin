@@ -15,7 +15,7 @@ const FollowLink = ({follow}) => (
   </Link>
 );
 
-const FollowsHeaderBox = ({follows, user}) => (
+const FollowsHeaderBox = ({follows, followsName, user}) => (
   <div className="follows-header-box">
     <div className="follows-numbers">
       <div className="follows-numbers-num">{follows.length}</div>
@@ -36,7 +36,7 @@ const Follows = ({followers, followings, location, user}) => {
 
   return (
     <div className="follows-container">
-      <FollowsHeaderBox follows={follows} user={user} />
+      <FollowsHeaderBox follows={follows} user={user} followsName={followsName} />
 
       <ul className="follows-list">
         {follows.map((follow) => <FollowLink follow={follow} key={follow.id} />)}
