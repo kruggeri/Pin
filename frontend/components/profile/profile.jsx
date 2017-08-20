@@ -116,6 +116,7 @@ class Profile extends Component {
   }
 
   profileButtons() {
+    //TODO: add pins component to profile page
     return (
       <div className="profile-buttons">
         <div className="boards-button">
@@ -125,8 +126,8 @@ class Profile extends Component {
         </div>
 
         <div className="pins-button">
-          <Link to={`/users/${this.props.user.id}/pins`} className="user-profile-link">
-            {this.props.user.pins.length} Pins
+          <Link to={`/users/${this.props.user.id}`} className="user-profile-link">
+            {this.props.pins.length} Pins
           </Link>
         </div>
       </div>
