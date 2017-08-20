@@ -13,12 +13,12 @@ export const createBoard = (board) => {
   });
 };
 
-export const deleteBoard = (boardId) => (
-  $.ajax({
+export const destroyBoard = (boardId) => {
+  return $.ajax({
     method: 'DELETE',
     url: `/api/boards/${boardId}`
-  })
-);
+  });
+};
 
 export const updateBoard = (board) =>{
   return $.ajax({

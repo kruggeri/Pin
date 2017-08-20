@@ -31,7 +31,7 @@ class Api::BoardsController < ApplicationController
   def destroy
     @board = Board.find(params[:id])
     if @board.destroy
-      render :show
+      render json: { id: @board.id }
     else
       render json: @board.errors.full_messages, status: 422
     end

@@ -34,6 +34,20 @@ class BoardShow extends React.Component {
     );
   }
 
+  destroyBoardButton() {
+    const {user, currentUser, board, destroyBoard} = this.props;
+    if (user.id !== currentUser.id) {
+      return null;
+    }
+
+    //TODO: change button class, call destroy board button mimic follow-button css
+    return (
+      <button className="destroy-board-button" onClick={() => destroyBoard(board.id)}>
+        Destroy
+      </button>
+    );
+  }
+
   pinCredits(pin) {
     const {user, board} = this.props;
     return (
@@ -94,6 +108,7 @@ class BoardShow extends React.Component {
 
         <div className="board-show-info">
           {this.pinCount()}
+          {this.destroyBoardButton()}
           {this.profilePic()}
         </div>
       </div></div>

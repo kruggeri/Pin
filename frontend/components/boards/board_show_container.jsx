@@ -1,6 +1,6 @@
 import { values } from 'lodash';
 import { connect } from 'react-redux';
-import { fetchBoard, deleteBoard } from '../../actions/board_actions';
+import { fetchBoard, destroyBoard } from '../../actions/board_actions';
 import { open } from '../../actions/modal_actions';
 import { requestSingleUser } from '../../actions/profile_actions';
 import BoardShow from './board_show';
@@ -17,7 +17,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
   fetchBoard: (board) => dispatch(fetchBoard(board)),
   requestSingleUser: (userId) => dispatch(requestSingleUser(userId)),
-  deleteBoard: (boardId) => dispatch(deleteBoard(boardId)),
+  destroyBoard: (boardId) => dispatch(destroyBoard(boardId)),
   openModal: (component) => dispatch(open(component)),
 });
 

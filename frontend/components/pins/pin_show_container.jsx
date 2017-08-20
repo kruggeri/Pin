@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { requestSinglePin, removePin } from '../../actions/pin_actions';
+import { requestSinglePin, destroyPin } from '../../actions/pin_actions';
 import { requestSingleUser } from '../../actions/profile_actions';
 import PinShow from './pin_show';
 
@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => ({
   requestSinglePin: (pinId) => dispatch(requestSinglePin(pinId)),
   requestSingleUser: (userId) => dispatch(requestSingleUser(userId)),
-  removePin: (pinId) => dispatch(removePin(pinId))
+  destroyPin: (pinId) => dispatch(destroyPin(pinId))
 });
 
 export default connect(

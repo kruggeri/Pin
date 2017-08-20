@@ -21,3 +21,10 @@ export const createPin = (formData) => {
     data: formData
   });
 };
+
+export const destroyPin = (pinId) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/pins/${pinId}`
+  })
+}

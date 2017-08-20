@@ -29,7 +29,7 @@ class PinShow extends React.Component {
       return <div />;
     }
 
-    const clickHandler = () => this.props.removePin(this.props.pinId);
+    const clickHandler = () => this.props.destroyPin(this.props.pinId);
     return (
       <button className="delete-pin" onClick={clickHandler}>
         <img src={window.images.delete_icon} />

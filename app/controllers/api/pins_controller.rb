@@ -26,7 +26,7 @@ class Api::PinsController < ApplicationController
   def destroy
     @pin = Pin.find(params[:id])
     if @pin.destroy
-      render :show
+      render json: { id: @pin.id }
     else
       render json: ['Failed to delete'], status: 404
     end

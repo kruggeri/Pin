@@ -39,3 +39,10 @@ export const createPin = (pin) => (dispatch) => {
       .then(newPin => dispatch(receiveSinglePin(newPin)))
   );
 };
+
+export const destroyPin = (pinId) => (dispatch) => {
+  return (
+    APIUtil.destroyPin(pinId)
+      .then(() => dispatch(removePin(pinId)))
+  );
+};

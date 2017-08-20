@@ -393,7 +393,7 @@ body {
   font-size: 30px;
 }
 
-.follow-button {
+.follow-button, .destroy-board-button {
   margin-left: 65%;
   font-size: 16px;
   color: #555;
@@ -406,7 +406,7 @@ body {
 
 }
 
-.follow-button:hover {
+.follow-button:hover, .destroy-board-button:hover {
   cursor: pointer;
 }
 

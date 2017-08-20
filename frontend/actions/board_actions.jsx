@@ -8,9 +8,9 @@ export const receiveBoard = (board) => ({
   board: board,
 });
 
-export const removeBoard = (board) => ({
+export const removeBoard = (boardId) => ({
   type: DELETE_BOARD,
-  board: board,
+  boardId: boardId,
 });
 
 export const fetchBoard = (boardId) => (dispatch) => (
@@ -28,7 +28,7 @@ export const editBoard = (board) => (dispatch) => (
     .then(updatedBoard => dispatch(receiveBoard(updatedBoard)))
 );
 
-export const deleteBoard = (boardId) => (dispatch) => (
-  APIUtil.deleteBoard(boardId)
-    .then((board) => dispatch(removeBoard(board)))
+export const destroyBoard = (boardId) => (dispatch) => (
+  APIUtil.destroyBoard(boardId)
+    .then(() => dispatch(removeBoard(boardId)))
 );
