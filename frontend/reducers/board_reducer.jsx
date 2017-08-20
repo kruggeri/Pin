@@ -1,4 +1,4 @@
-import { merge, concat, reject } from 'lodash';
+import { merge, concat, omit, reject } from 'lodash';
 import { RECEIVE_BOARD, DELETE_BOARD } from '../actions/board_actions';
 import { RECEIVE_SINGLE_PIN, REMOVE_PIN } from '../actions/pin_actions';
 
@@ -23,7 +23,7 @@ const BoardReducer = (state = defaultState, action) => {
       });
     case REMOVE_PIN:
       return merge({}, state, {
-        pins: omit(state.pins, action.pin.id)
+        pins: omit(state.pins, action.id)
       });
     default:
       return state;

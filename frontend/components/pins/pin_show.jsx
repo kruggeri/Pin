@@ -25,11 +25,13 @@ class PinShow extends React.Component {
   }
 
   deleteButton() {
-    if (parseInt(this.props.pin.user_id) != this.props.currentUser.id) {
+    const {pin, currentUser, destroyPin} = this.props;
+    if (parseInt(pin.user_id) != currentUser.id) {
       return <div />;
     }
 
-    const clickHandler = () => this.props.destroyPin(this.props.pinId);
+    const clickHandler = () => destroyPin(pin.id).then(() => this.goBack(pin.board_id));
+    console.log(pin);
     return (
       <button className="delete-pin" onClick={clickHandler}>
         <img src={window.images.delete_icon} />
@@ -37,11 +39,17 @@ class PinShow extends React.Component {
     );
   }
 
-  goBack(e) {
+  goBack(boardId) {
+    debugger;
+    this.props.history.push(`/boards/${boardId}`);
+  }
+
+  dismissModal(e) {
     e.preventDefault();
+    const {pin} = this.props;
     // if clicking outside image, send user back
     if (e.target.getAttribute("class") === "pin-show-page") {
-      this.props.history.goBack();
+      this.goBack(pin.board_id);
     };
   }
 
@@ -62,8 +70,8 @@ class PinShow extends React.Component {
   pinInfo() {
     const {pin} = this.props;
     const pinLink = (
-      <Link to={`/boards/${pin.boardId}`} className="pin-show-board">
-        {pin.boardTitle}
+      <Link to={`/boards/${pin.board_id}`} className="pin-show-board">
+        {pin.board_title}
       </Link>
     );
 
@@ -127,7 +135,7 @@ class PinShow extends React.Component {
     }
 
     return (
-      <div className="pin-show-page" onClick={this.goBack.bind(this)}>
+      <div className="pin-show-page" onClick={(e) => this.dismissModal(e)}>
         <div className="close-up-container">
           {this.closeUpHeader()}
           {this.pinShowGuts()}

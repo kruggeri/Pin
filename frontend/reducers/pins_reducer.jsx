@@ -9,7 +9,7 @@ const PinsReducer = (state = defaultState, action) => {
     case RECEIVE_SINGLE_PIN:
       return merge({}, state, {[action.pin.id]: action.pin});
     case REMOVE_PIN:
-      return merge({}, omit(state, action.pin.id));
+      return omit(state, action.id);
     default:
       return state;
   }

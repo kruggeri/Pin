@@ -34,6 +34,11 @@ class BoardShow extends React.Component {
     );
   }
 
+  goBack() {
+    const {currentUser, history} = this.props;
+    history.push(`/users/${currentUser.id}`);
+  }
+
   destroyBoardButton() {
     const {user, currentUser, board, destroyBoard} = this.props;
     if (user.id !== currentUser.id) {
@@ -41,8 +46,9 @@ class BoardShow extends React.Component {
     }
 
     //TODO: change button class, call destroy board button mimic follow-button css
+    const callBack = () => destroyBoard(board.id).then(() => this.goBack())
     return (
-      <button className="destroy-board-button" onClick={() => destroyBoard(board.id)}>
+      <button className="destroy-board-button" onClick={callBack}>
         Destroy
       </button>
     );
