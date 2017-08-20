@@ -21,5 +21,6 @@ class Board < ActiveRecord::Base
   has_many :pins,
     primary_key: :id,
     foreign_key: :board_id,
+    dependent: :destroy,
     class_name: "Pin"
 end
