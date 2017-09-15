@@ -1,6 +1,6 @@
 # Pin
 
-[Pin](https://p-i-n.herokuapp.com/)
+[Pin](http://www.p-i-n.design/#/login)
 
 Pin is a full-stack web application inspired by Pinterest. It's been altered to look and function more as an artist's portfolio, and was created with collectors/curators in mind.
 
@@ -46,7 +46,7 @@ Users can add to their own boards by clicking on the add pin icon, which opens t
 
 ## Follows
 
-When looking at a user's profile, one can click on 'Followers' or 'Following' to see followers. Clicking on a user's icon, will send the user to the corresponding profile page. A user can unfollow or follow a user by clicking on their follow button, which will either execute the corresponding action. 
+When looking at a user's profile, one can click on 'Followers' or 'Following' to see followers. Clicking on a user's icon, will send the user to the corresponding profile page. A user can unfollow or follow a user by clicking on their follow button, which will either execute the corresponding action.
 
 ## Discovery
 
